@@ -49,3 +49,4 @@ modul ini (`app/cv.py` dan `app/nlp.py`) bisa diganti ke model pretrained
 seperti **CLIP**/**ResNet** untuk gambar atau **sentence-transformers** untuk
 teks, tanpa perlu mengubah `app/main.py` karena keduanya dipanggil lewat satu
 fungsi (`image_similarity()` dan `text_similarity()`).
+<!-- trigger CI test -->
