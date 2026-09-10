@@ -35,4 +35,5 @@ jobs:
         run: pytest -v
 
       - name: Build check
-        run: python -c "from app.main import app; print('Build OK: app imported successfully')"
+        run: |
+          python -c "from app.main import app; print('Build OK: app imported successfully')"
