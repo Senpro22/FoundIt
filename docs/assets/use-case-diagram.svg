@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1110" viewBox="0 0 1520 1110" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .uc { fill:#eef4fb; stroke:#2d5f8b; stroke-width:2 }
+    .uct { font-size:15px; fill:#12324d; text-anchor:middle }
+    .assoc { stroke:#3b3b3b; stroke-width:1.6; fill:none }
+    .rel { stroke:#7a7a7a; stroke-width:1.5; stroke-dasharray:7 5; fill:none; marker-end:url(#arrow) }
+    .rlbl { font-size:12.5px; fill:#6b6b6b; font-style:italic; text-anchor:middle }
+    .actor { stroke:#12324d; stroke-width:2; fill:none }
+    .an { font-size:15px; font-weight:600; fill:#12324d; text-anchor:middle }
+    .as { font-size:12px; fill:#5a6b78; text-anchor:middle }
+    .bnd { fill:none; stroke:#9aa7b1; stroke-width:2 }
+    .bndt { font-size:19px; font-weight:700; fill:#44586a; text-anchor:middle }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="none" stroke="#7a7a7a" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="1520" height="1110" fill="#ffffff"/>
+
+  <rect class="bnd" x="250" y="70" width="940" height="880" rx="10"/>
+  <text class="bndt" x="720" y="102">Sistem FoundIt</text>
+
+  <!-- ============ ACTORS ============ -->
+  <g transform="translate(150,500)">
+    <text class="an" x="10" y="-96" text-anchor="end">Pengguna</text>
+    <text class="as" x="10" y="-78" text-anchor="end">(Mahasiswa / Dosen / Staf)</text>
+    <circle class="actor" cx="0" cy="-46" r="16"/>
+    <line class="actor" x1="0" y1="-30" x2="0" y2="12"/>
+    <line class="actor" x1="-22" y1="-14" x2="22" y2="-14"/>
+    <line class="actor" x1="0" y1="12" x2="-18" y2="46"/>
+    <line class="actor" x1="0" y1="12" x2="18" y2="46"/>
+  </g>
+
+  <g transform="translate(1350,330)">
+    <text class="an" y="-96">Admin</text>
+    <text class="as" y="-78">(Petugas Keamanan)</text>
+    <circle class="actor" cx="0" cy="-46" r="16"/>
+    <line class="actor" x1="0" y1="-30" x2="0" y2="12"/>
+    <line class="actor" x1="-22" y1="-14" x2="22" y2="-14"/>
+    <line class="actor" x1="0" y1="12" x2="-18" y2="46"/>
+    <line class="actor" x1="0" y1="12" x2="18" y2="46"/>
+  </g>
+
+  <g transform="translate(1010,1020)">
+    <circle class="actor" cx="0" cy="-46" r="16"/>
+    <line class="actor" x1="0" y1="-30" x2="0" y2="12"/>
+    <line class="actor" x1="-22" y1="-14" x2="22" y2="-14"/>
+    <line class="actor" x1="0" y1="12" x2="-18" y2="46"/>
+    <line class="actor" x1="0" y1="12" x2="18" y2="46"/>
+    <text class="as" y="66">&#171;system&#187;</text>
+    <text class="an" y="84">AI Matching Engine</text>
+  </g>
+
+  <!-- ============ KOLOM 1 : use case pengguna ============ -->
+  <ellipse class="uc" cx="430" cy="150" rx="115" ry="38"/><text class="uct" x="430" y="156">Registrasi Akun</text>
+  <ellipse class="uc" cx="430" cy="240" rx="115" ry="38"/><text class="uct" x="430" y="246">Login</text>
+  <ellipse class="uc" cx="430" cy="360" rx="115" ry="38"/><text class="uct" x="430" y="355">Lapor Barang</text><text class="uct" x="430" y="373">Hilang</text>
+  <ellipse class="uc" cx="430" cy="450" rx="115" ry="38"/><text class="uct" x="430" y="445">Lapor Barang</text><text class="uct" x="430" y="463">Ditemukan</text>
+  <ellipse class="uc" cx="430" cy="570" rx="115" ry="38"/><text class="uct" x="430" y="565">Cari &amp; Filter</text><text class="uct" x="430" y="583">Katalog Barang</text>
+  <ellipse class="uc" cx="430" cy="660" rx="115" ry="38"/><text class="uct" x="430" y="655">Kelola Riwayat</text><text class="uct" x="430" y="673">Laporan</text>
+  <ellipse class="uc" cx="430" cy="790" rx="115" ry="38"/><text class="uct" x="430" y="785">Ajukan Klaim</text><text class="uct" x="430" y="803">Kepemilikan</text>
+
+  <!-- ============ KOLOM 2 : include / extend ============ -->
+  <ellipse class="uc" cx="740" cy="300" rx="115" ry="38"/><text class="uct" x="740" y="295">Unggah Foto &amp;</text><text class="uct" x="740" y="313">Detail Barang</text>
+  <ellipse class="uc" cx="740" cy="420" rx="115" ry="38"/><text class="uct" x="740" y="415">Pencocokan</text><text class="uct" x="740" y="433">Otomatis Laporan</text>
+  <ellipse class="uc" cx="740" cy="540" rx="115" ry="38"/><text class="uct" x="740" y="535">Hitung</text><text class="uct" x="740" y="553">Confidence Score</text>
+  <ellipse class="uc" cx="740" cy="660" rx="115" ry="38"/><text class="uct" x="740" y="655">Kirim Notifikasi</text><text class="uct" x="740" y="673">Kecocokan</text>
+  <ellipse class="uc" cx="740" cy="790" rx="115" ry="38"/><text class="uct" x="740" y="785">Verifikasi</text><text class="uct" x="740" y="803">Kepemilikan</text>
+  <ellipse class="uc" cx="740" cy="890" rx="115" ry="38"/><text class="uct" x="740" y="885">Unggah Bukti</text><text class="uct" x="740" y="903">Kepemilikan (KTM)</text>
+
+  <!-- ============ KOLOM 3 : use case admin ============ -->
+  <ellipse class="uc" cx="1040" cy="180" rx="115" ry="38"/><text class="uct" x="1040" y="186">Moderasi Laporan</text>
+  <ellipse class="uc" cx="1040" cy="280" rx="115" ry="38"/><text class="uct" x="1040" y="275">Kelola Klaim</text><text class="uct" x="1040" y="293">(Setujui / Tolak)</text>
+  <ellipse class="uc" cx="1040" cy="380" rx="115" ry="38"/><text class="uct" x="1040" y="375">Konfirmasi Serah</text><text class="uct" x="1040" y="393">Terima Barang</text>
+  <ellipse class="uc" cx="1040" cy="480" rx="115" ry="38"/><text class="uct" x="1040" y="475">Lihat Statistik &amp;</text><text class="uct" x="1040" y="493">Dashboard</text>
+  <ellipse class="uc" cx="1040" cy="580" rx="115" ry="38"/><text class="uct" x="1040" y="575">Kelola Data</text><text class="uct" x="1040" y="593">Pengguna</text>
+
+  <!-- ============ ASOSIASI : Pengguna ============ -->
+  <path class="assoc" d="M172,466 L316,164"/>
+  <path class="assoc" d="M170,478 L316,251"/>
+  <path class="assoc" d="M168,490 L316,368"/>
+  <path class="assoc" d="M168,500 L316,452"/>
+  <path class="assoc" d="M168,512 L316,566"/>
+  <path class="assoc" d="M170,524 L316,652"/>
+  <path class="assoc" d="M174,536 L316,778"/>
+
+  <!-- ============ ASOSIASI : Admin ============ -->
+  <path class="assoc" d="M1326,294 L1155,186"/>
+  <path class="assoc" d="M1324,302 L1155,281"/>
+  <path class="assoc" d="M1324,360 L1155,378"/>
+  <path class="assoc" d="M1326,370 L1155,472"/>
+  <path class="assoc" d="M1330,380 L1155,570"/>
+
+  <!-- ============ ASOSIASI : AI Matching Engine ============ -->
+  <path class="assoc" d="M988,982 L800,455"/>
+  <path class="assoc" d="M1006,974 L830,570"/>
+
+  <!-- ============ INCLUDE / EXTEND ============ -->
+  <path class="rel" d="M540,338 L630,312"/>
+  <text class="rlbl" x="588" y="308">&#171;include&#187;</text>
+  <path class="rel" d="M540,434 L632,326"/>
+  <text class="rlbl" x="574" y="412">&#171;include&#187;</text>
+
+  <path class="rel" d="M544,382 L628,404"/>
+  <text class="rlbl" x="586" y="374">&#171;include&#187;</text>
+  <path class="rel" d="M544,438 L628,432"/>
+  <text class="rlbl" x="586" y="462">&#171;include&#187;</text>
+
+  <path class="rel" d="M740,482 L740,462"/>
+  <text class="rlbl" x="812" y="478">&#171;include&#187;</text>
+  <path class="rel" d="M740,602 L740,582"/>
+  <text class="rlbl" x="812" y="598">&#171;extend&#187;</text>
+
+  <path class="rel" d="M546,792 L624,791"/>
+  <text class="rlbl" x="585" y="781">&#171;include&#187;</text>
+  <path class="rel" d="M740,852 L740,832"/>
+  <text class="rlbl" x="812" y="848">&#171;include&#187;</text>
+
+  <path class="rel" d="M928,300 L856,412"/>
+  <text class="rlbl" x="912" y="368">&#171;include&#187;</text>
+</svg>

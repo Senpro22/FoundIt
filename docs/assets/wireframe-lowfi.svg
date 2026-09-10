@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1075" viewBox="0 0 1920 1075" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1920" height="1075" fill="#ffffff"/>
+<text x="60" y="52" font-size="24" font-weight="700" fill="#222">Low-Fidelity Wireframe &#8212; FoundIt</text>
+<text x="60" y="76" font-size="13" fill="#777">Platform Lost and Found Kampus Berbasis AI  |  Kelompok 22</text>
+<rect x="60" y="110" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="60" y="98" font-size="13.5" fill="#333" font-weight="700">A. Halaman Login / Registrasi</text>
+<rect x="60" y="110" width="560" height="40" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="74" y="120" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="102" y="135" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt</text>
+<rect x="210" y="195" width="260" height="250" rx="4" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="340" y="228" font-size="14" fill="#333" text-anchor="middle" font-weight="700">Masuk ke FoundIt</text>
+<text x="240" y="254" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Email / NIU</text>
+<rect x="240" y="258" width="200" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="240" y="314" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Kata Sandi</text>
+<rect x="240" y="318" width="200" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="240" y="368" width="200" height="32" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="340.0" y="388.0" font-size="11" fill="#444" text-anchor="middle" font-weight="600">Masuk</text>
+<text x="340" y="425" font-size="9.5" fill="#888" text-anchor="middle" font-weight="400">Belum punya akun? Daftar di sini</text>
+<rect x="680" y="110" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="680" y="98" font-size="13.5" fill="#333" font-weight="700">B. Dashboard Pengguna</text>
+<rect x="680" y="110" width="560" height="40" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="694" y="120" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="722" y="135" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt</text>
+<text x="810" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Beranda</text>
+<text x="879.4" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Lapor</text>
+<text x="936.4" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Katalog</text>
+<text x="1005.8" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Riwayat</text>
+<circle cx="1214" cy="130" r="11" fill="#e0e0e0" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="700" y="178" font-size="13.5" fill="#333" text-anchor="start" font-weight="700">Dashboard Saya</text>
+<rect x="700" y="190" width="166" height="58" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="783" y="218" font-size="17" fill="#444" text-anchor="middle" font-weight="700">3</text>
+<text x="783" y="236" font-size="9.5" fill="#888" text-anchor="middle" font-weight="400">Laporan Aktif</text>
+<rect x="877" y="190" width="166" height="58" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="960" y="218" font-size="17" fill="#444" text-anchor="middle" font-weight="700">2</text>
+<text x="960" y="236" font-size="9.5" fill="#888" text-anchor="middle" font-weight="400">Kecocokan Baru</text>
+<rect x="1054" y="190" width="166" height="58" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1137" y="218" font-size="17" fill="#444" text-anchor="middle" font-weight="700">1</text>
+<text x="1137" y="236" font-size="9.5" fill="#888" text-anchor="middle" font-weight="400">Klaim Diproses</text>
+<text x="700" y="278" font-size="12" fill="#333" text-anchor="start" font-weight="700">Notifikasi Kecocokan</text>
+<rect x="700" y="288" width="520" height="68" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="712" y="297" width="62" height="50" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M712,297 L774,347 M774,297 L712,347" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="788" y="304" width="200" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="788" y="322" width="140" height="7" rx="3" fill="#dcdcdc"/>
+<text x="788" y="346" font-size="9" fill="#999" text-anchor="start" font-weight="400">Ditemukan di Gedung DTETI  |  2 hari lalu</text>
+<rect x="1118" y="310" width="90" height="24" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1163.0" y="326.0" font-size="9.5" fill="#444" text-anchor="middle" font-weight="600">87% Match</text>
+<rect x="700" y="366" width="520" height="68" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="712" y="375" width="62" height="50" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M712,375 L774,425 M774,375 L712,425" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="788" y="382" width="200" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="788" y="400" width="140" height="7" rx="3" fill="#dcdcdc"/>
+<text x="788" y="424" font-size="9" fill="#999" text-anchor="start" font-weight="400">Ditemukan di Gedung DTETI  |  2 hari lalu</text>
+<rect x="1118" y="388" width="90" height="24" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1163.0" y="404.0" font-size="9.5" fill="#444" text-anchor="middle" font-weight="600">72% Match</text>
+<text x="700" y="462" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Lihat semua notifikasi</text>
+<rect x="1300" y="110" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="1300" y="98" font-size="13.5" fill="#333" font-weight="700">C. Form Lapor Barang (Hilang / Ditemukan)</text>
+<rect x="1300" y="110" width="560" height="40" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="1314" y="120" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1342" y="135" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt</text>
+<text x="1430" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Beranda</text>
+<text x="1499.4" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Lapor</text>
+<text x="1556.4" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Katalog</text>
+<text x="1625.8" y="135" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Riwayat</text>
+<circle cx="1834" cy="130" r="11" fill="#e0e0e0" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1320" y="176" font-size="13.5" fill="#333" text-anchor="start" font-weight="700">Lapor Barang</text>
+<rect x="1320" y="186" width="105" height="28" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1372.5" y="204.0" font-size="10.5" fill="#444" text-anchor="middle" font-weight="600">Hilang</text>
+<rect x="1429" y="186" width="115" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1486" y="205" font-size="10.5" fill="#888" text-anchor="middle" font-weight="400">Ditemukan</text>
+<rect x="1320" y="230" width="205" height="120" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2" stroke-dasharray="6 4"/>
+<rect x="1380" y="250" width="84" height="56" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M1380,250 L1464,306 M1464,250 L1380,306" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<text x="1422" y="328" font-size="10" fill="#888" text-anchor="middle" font-weight="400">Unggah / Seret Foto</text>
+<text x="1545" y="236" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Kategori Barang</text>
+<rect x="1545" y="240" width="295" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1545" y="292" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Lokasi (peta / dropdown gedung)</text>
+<rect x="1545" y="296" width="295" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1545" y="348" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Tanggal &amp; Waktu Kejadian</text>
+<rect x="1545" y="352" width="295" height="28" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1320" y="378" font-size="9.5" fill="#888" text-anchor="start" font-weight="400">Deskripsi Detail</text>
+<rect x="1320" y="384" width="520" height="62" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="1690" y="460" width="150" height="32" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1765.0" y="480.0" font-size="11" fill="#444" text-anchor="middle" font-weight="600">Kirim Laporan</text>
+<rect x="60" y="610" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="60" y="598" font-size="13.5" fill="#333" font-weight="700">D. Katalog &amp; Pencarian Barang</text>
+<rect x="60" y="610" width="560" height="40" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="74" y="620" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="102" y="635" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt</text>
+<text x="190" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Beranda</text>
+<text x="259.4" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Lapor</text>
+<text x="316.4" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Katalog</text>
+<text x="385.79999999999995" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Riwayat</text>
+<circle cx="594" cy="630" r="11" fill="#e0e0e0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="80" y="666" width="400" height="30" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="92" y="686" font-size="10.5" fill="#aaa" text-anchor="start" font-weight="400">Cari barang...</text>
+<rect x="490" y="666" width="110" height="30" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="545.0" y="685.0" font-size="11" fill="#444" text-anchor="middle" font-weight="600">Cari</text>
+<rect x="80" y="706" width="80" height="22" rx="11" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="120" y="721" font-size="9.5" fill="#777" text-anchor="middle" font-weight="400">Kategori</text>
+<rect x="168" y="706" width="80" height="22" rx="11" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="208" y="721" font-size="9.5" fill="#777" text-anchor="middle" font-weight="400">Lokasi</text>
+<rect x="256" y="706" width="80" height="22" rx="11" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="296" y="721" font-size="9.5" fill="#777" text-anchor="middle" font-weight="400">Tanggal</text>
+<rect x="344" y="706" width="80" height="22" rx="11" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="384" y="721" font-size="9.5" fill="#777" text-anchor="middle" font-weight="400">Status</text>
+<rect x="80" y="742" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="89" y="751" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M89,751 L239,813 M239,751 L89,813" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="89" y="822" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="89" y="836" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="89" y="852" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="256" y="742" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="265" y="751" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M265,751 L415,813 M415,751 L265,813" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="265" y="822" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="265" y="836" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="265" y="852" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="432" y="742" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="441" y="751" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M441,751 L591,813 M591,751 L441,813" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="441" y="822" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="441" y="836" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="441" y="852" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="80" y="868" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="89" y="877" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M89,877 L239,939 M239,877 L89,939" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="89" y="948" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="89" y="962" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="89" y="978" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="256" y="868" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="265" y="877" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M265,877 L415,939 M415,877 L265,939" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="265" y="948" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="265" y="962" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="265" y="978" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="432" y="868" width="168" height="116" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="441" y="877" width="150" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M441,877 L591,939 M591,877 L441,939" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="441" y="948" width="112" height="8" rx="3" fill="#dcdcdc"/>
+<rect x="441" y="962" width="76" height="7" rx="3" fill="#dcdcdc"/>
+<text x="441" y="978" font-size="8.5" fill="#a0a0a0" text-anchor="start" font-weight="400">Ditemukan  |  2 hari lalu</text>
+<rect x="680" y="610" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="680" y="598" font-size="13.5" fill="#333" font-weight="700">E. Detail Laporan &amp; Hasil Matching AI</text>
+<rect x="680" y="610" width="560" height="40" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="694" y="620" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="722" y="635" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt</text>
+<text x="810" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Beranda</text>
+<text x="879.4" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Lapor</text>
+<text x="936.4" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Katalog</text>
+<text x="1005.8" y="635" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Riwayat</text>
+<circle cx="1214" cy="630" r="11" fill="#e0e0e0" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="700" y="676" font-size="13.5" fill="#333" text-anchor="start" font-weight="700">Detail Laporan</text>
+<rect x="700" y="688" width="240" height="148" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M700,688 L940,836 M940,688 L700,836" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<text x="700" y="858" font-size="10" fill="#666" text-anchor="start" font-weight="400">Kategori : Dompet</text>
+<text x="700" y="878" font-size="10" fill="#666" text-anchor="start" font-weight="400">Lokasi   : Gedung DTETI, Lt. 2</text>
+<text x="700" y="898" font-size="10" fill="#666" text-anchor="start" font-weight="400">Waktu    : 8 Sep 2026, 14.00</text>
+<text x="700" y="918" font-size="10" fill="#666" text-anchor="start" font-weight="400">Status   : Menunggu Klaim</text>
+<text x="960" y="682" font-size="12" fill="#333" text-anchor="start" font-weight="700">Kemungkinan Cocok</text>
+<rect x="960" y="692" width="260" height="84" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="970" y="703" width="62" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M970,703 L1032,765 M1032,703 L970,765" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="1042" y="712" width="110" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1042" y="740" font-size="9" fill="#999" text-anchor="start" font-weight="400">Perpustakaan Pusat</text>
+<text x="1042" y="756" font-size="9" fill="#999" text-anchor="start" font-weight="400">7 Sep 2026</text>
+<rect x="1158" y="706" width="52" height="22" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1184.0" y="721.0" font-size="10" fill="#444" text-anchor="middle" font-weight="600">87%</text>
+<rect x="960" y="786" width="260" height="84" rx="3" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="970" y="797" width="62" height="62" rx="0" fill="#f0f0f0" stroke="#9a9a9a" stroke-width="1.2"/>
+<path d="M970,797 L1032,859 M1032,797 L970,859" stroke="#c8c8c8" stroke-width="1" fill="none"/>
+<rect x="1042" y="806" width="110" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1042" y="834" font-size="9" fill="#999" text-anchor="start" font-weight="400">Perpustakaan Pusat</text>
+<text x="1042" y="850" font-size="9" fill="#999" text-anchor="start" font-weight="400">7 Sep 2026</text>
+<rect x="1158" y="800" width="52" height="22" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1184.0" y="815.0" font-size="10" fill="#444" text-anchor="middle" font-weight="600">72%</text>
+<rect x="960" y="892" width="260" height="34" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1090.0" y="913.0" font-size="11" fill="#444" text-anchor="middle" font-weight="600">Ajukan Klaim Kepemilikan</text>
+<text x="960" y="946" font-size="9" fill="#999" text-anchor="start" font-weight="400">Klaim memerlukan verifikasi: unggah KTM</text>
+<text x="960" y="962" font-size="9" fill="#999" text-anchor="start" font-weight="400">dan jawab pertanyaan spesifik tentang barang.</text>
+<rect x="1300" y="610" width="560" height="400" fill="#ffffff" stroke="#6f6f6f" stroke-width="1.6"/>
+<text x="1300" y="598" font-size="13.5" fill="#333" font-weight="700">F. Dashboard Admin / Petugas Keamanan</text>
+<rect x="1300" y="610" width="560" height="40" rx="0" fill="#e6e6e6" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="1314" y="620" width="20" height="20" rx="3" fill="#d8d8d8" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1342" y="635" font-size="12.5" fill="#444" text-anchor="start" font-weight="700">FoundIt  |  Admin</text>
+<circle cx="1834" cy="630" r="11" fill="#e0e0e0" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="1300" y="650" width="112" height="360" rx="0" fill="#f7f7f7" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1316" y="678" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Moderasi</text>
+<text x="1316" y="704" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Klaim</text>
+<text x="1316" y="730" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Statistik</text>
+<text x="1316" y="756" font-size="10.5" fill="#777" text-anchor="start" font-weight="400">Pengguna</text>
+<rect x="1428" y="664" width="96" height="54" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1476" y="690" font-size="15" fill="#444" text-anchor="middle" font-weight="700">128</text>
+<text x="1476" y="707" font-size="9" fill="#888" text-anchor="middle" font-weight="400">Laporan</text>
+<rect x="1533" y="664" width="96" height="54" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1581" y="690" font-size="15" fill="#444" text-anchor="middle" font-weight="700">24</text>
+<text x="1581" y="707" font-size="9" fill="#888" text-anchor="middle" font-weight="400">Klaim</text>
+<rect x="1638" y="664" width="96" height="54" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1686" y="690" font-size="15" fill="#444" text-anchor="middle" font-weight="700">19</text>
+<text x="1686" y="707" font-size="9" fill="#888" text-anchor="middle" font-weight="400">Cocok</text>
+<rect x="1743" y="664" width="96" height="54" rx="3" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1791" y="690" font-size="15" fill="#444" text-anchor="middle" font-weight="700">342</text>
+<text x="1791" y="707" font-size="9" fill="#888" text-anchor="middle" font-weight="400">Pengguna</text>
+<text x="1428" y="744" font-size="12" fill="#333" text-anchor="start" font-weight="700">Antrian Moderasi Laporan</text>
+<rect x="1428" y="754" width="412" height="26" rx="0" fill="#efefef" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1436" y="771" font-size="9.5" fill="#666" text-anchor="start" font-weight="700">ID</text>
+<text x="1480" y="771" font-size="9.5" fill="#666" text-anchor="start" font-weight="700">Barang</text>
+<text x="1630" y="771" font-size="9.5" fill="#666" text-anchor="start" font-weight="700">Status</text>
+<text x="1730" y="771" font-size="9.5" fill="#666" text-anchor="start" font-weight="700">Aksi</text>
+<rect x="1428" y="780" width="412" height="33" rx="0" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1436" y="801" font-size="9" fill="#888" text-anchor="start" font-weight="400">#101</text>
+<rect x="1480" y="793" width="120" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1630" y="801" font-size="9" fill="#888" text-anchor="start" font-weight="400">Menunggu</text>
+<rect x="1724" y="787" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1748.0" y="800.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Setujui</text>
+<rect x="1778" y="787" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1802.0" y="800.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Tolak</text>
+<rect x="1428" y="813" width="412" height="33" rx="0" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1436" y="834" font-size="9" fill="#888" text-anchor="start" font-weight="400">#102</text>
+<rect x="1480" y="826" width="120" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1630" y="834" font-size="9" fill="#888" text-anchor="start" font-weight="400">Menunggu</text>
+<rect x="1724" y="820" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1748.0" y="833.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Setujui</text>
+<rect x="1778" y="820" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1802.0" y="833.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Tolak</text>
+<rect x="1428" y="846" width="412" height="33" rx="0" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1436" y="867" font-size="9" fill="#888" text-anchor="start" font-weight="400">#103</text>
+<rect x="1480" y="859" width="120" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1630" y="867" font-size="9" fill="#888" text-anchor="start" font-weight="400">Menunggu</text>
+<rect x="1724" y="853" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1748.0" y="866.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Setujui</text>
+<rect x="1778" y="853" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1802.0" y="866.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Tolak</text>
+<rect x="1428" y="879" width="412" height="33" rx="0" fill="#fff" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1436" y="900" font-size="9" fill="#888" text-anchor="start" font-weight="400">#104</text>
+<rect x="1480" y="892" width="120" height="8" rx="3" fill="#dcdcdc"/>
+<text x="1630" y="900" font-size="9" fill="#888" text-anchor="start" font-weight="400">Menunggu</text>
+<rect x="1724" y="886" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1748.0" y="899.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Setujui</text>
+<rect x="1778" y="886" width="48" height="19" rx="3" fill="#dcdcdc" stroke="#9a9a9a" stroke-width="1.2"/>
+<text x="1802.0" y="899.5" font-size="8.5" fill="#444" text-anchor="middle" font-weight="600">Tolak</text>
+<text x="1428" y="938" font-size="12" fill="#333" text-anchor="start" font-weight="700">Statistik Bulanan</text>
+<rect x="1428" y="946" width="412" height="52" rx="0" fill="#fafafa" stroke="#9a9a9a" stroke-width="1.2"/>
+<rect x="1442" y="972" width="22" height="18" fill="#d5d5d5"/>
+<rect x="1482" y="960" width="22" height="30" fill="#d5d5d5"/>
+<rect x="1522" y="966" width="22" height="24" fill="#d5d5d5"/>
+<rect x="1562" y="952" width="22" height="38" fill="#d5d5d5"/>
+<rect x="1602" y="962" width="22" height="28" fill="#d5d5d5"/>
+<rect x="1642" y="946" width="22" height="44" fill="#d5d5d5"/>
+<rect x="1682" y="956" width="22" height="34" fill="#d5d5d5"/>
+<rect x="1722" y="964" width="22" height="26" fill="#d5d5d5"/>
+<rect x="1762" y="950" width="22" height="40" fill="#d5d5d5"/>
+<rect x="1802" y="968" width="22" height="22" fill="#d5d5d5"/>
+</svg>
