@@ -65,3 +65,7 @@ Software lost & found berbayar untuk institusi (dipakai Virginia Tech, Rutgers).
 Barang tersimpan fisik dan resmi, tapi tersebar di banyak titik yang tidak saling terhubung, pendataan minim, dan pemilik harus menebak & datang langsung ke tiap lokasi.
 
 **Keunggulan FoundIt:** menggabungkan legitimasi institusional dan kemudahan pelaporan mandiri lewat satu katalog terpusat dengan pencocokan otomatis berbasis AI (visual, deskripsi, lokasi, dan waktu), sesuatu yang tidak dimiliki satupun kompetitor di atas.
+
+### Entity Relationship Diagram (ERD)
+
+![ERD FoundIt](assets/foundIt-ERD.png) 
