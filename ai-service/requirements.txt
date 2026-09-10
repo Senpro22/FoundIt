@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pillow
+imagehash
+scikit-learn
+numpy
+python-multipart
+pytest
+httpx
