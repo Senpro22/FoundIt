@@ -1,5 +1,9 @@
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
+
+// folder uploads/ ada di .gitignore, jadi belum ada setelah clone
+fs.mkdirSync('uploads', { recursive: true });
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
