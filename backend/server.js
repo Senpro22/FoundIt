@@ -11,7 +11,7 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 app.use('/api/reports', reportRoutes);
 
-sequelize.sync().then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(process.env.PORT, () => {
     console.log(`Server jalan di port ${process.env.PORT}`);
   });
