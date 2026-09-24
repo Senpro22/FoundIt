@@ -1,0 +1,54 @@
+/* Dashboard moderasi. Token warna & komponen dasar (header, tombol, kartu, tabs) dari lapor.css. */
+
+main.lebar{max-width:1120px}
+h2{margin:0 0 14px;font-size:15px;letter-spacing:-.01em}
+
+/* kartu angka */
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.kartu.angka{gap:6px;padding:18px 20px;border-left:4px solid var(--navy)}
+.kartu.angka.kuning{border-left-color:var(--aksen)}
+.kartu.angka.hijau{border-left-color:var(--hijau)}
+.kartu.angka.merah{border-left-color:var(--merah)}
+.kpi-label{font-size:12.5px;font-weight:600;color:var(--teks-3)}
+.kartu.angka strong{font-size:30px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* grafik batang sederhana */
+.dua{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.bar{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.bar li{display:grid;grid-template-columns:120px 1fr 32px;align-items:center;gap:12px}
+.bar-nama{font-size:13px;color:var(--teks-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{height:10px;border-radius:999px;background:#EDEFF3;overflow:hidden}
+.bar-isi{display:block;height:100%;border-radius:999px;background:var(--navy);min-width:4px}
+.bar-angka{font-size:13px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+
+/* daftar laporan */
+.daftar{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.kartu.laporan{flex-direction:row;gap:16px;padding:16px}
+.kartu.laporan img,.tanpa-foto{width:128px;height:128px;flex:none;border-radius:11px;object-fit:cover;background:#E6EAF0}
+.tanpa-foto{display:grid;place-items:center;font-size:12.5px;color:var(--teks-4)}
+.laporan .isi{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.baris-judul{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.baris-judul b{font-size:15.5px}
+.kode{margin-left:auto;font-size:12.5px;color:var(--teks-4);font-variant-numeric:tabular-nums}
+.meta{margin:0;font-size:12.5px;color:var(--teks-3)}
+.deskripsi{margin:0;font-size:13.5px;line-height:1.55;color:var(--teks-2)}
+.alasan{margin:0;font-size:12.5px;font-weight:600;color:var(--merah)}
+
+.tag{border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;border:1px solid transparent}
+.tag.hilang{background:#FDF3F2;border-color:#F0C4BF;color:#8B1A11}
+.tag.ditemukan{background:#E4F3EA;border-color:#B7DEC6;color:var(--hijau)}
+.tag.status.pending{background:#FBF3E4;border-color:#EBD6AE;color:#7A4510}
+.tag.status.disetujui{background:#EEF3FB;border-color:#C6D5EC;color:var(--navy)}
+.tag.status.ditolak{background:#F2F4F7;border-color:var(--garis-2);color:var(--teks-2)}
+
+.aksi-laporan{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.field.tolak{gap:7px;margin-top:4px}
+.kartu.kosong{align-items:center;padding:36px;color:var(--teks-3);font-size:14px}
+.kartu.kosong p{margin:0}
+
+@media (max-width:640px){
+  .kartu.laporan{flex-direction:column}
+  .kartu.laporan img,.tanpa-foto{width:100%;height:170px}
+  .bar li{grid-template-columns:96px 1fr 28px}
+  .kode{margin-left:0}
+}

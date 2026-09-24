@@ -22,3 +22,18 @@ cd frontend && npm install && npm run dev       # halaman di http://localhost:51
 
 Kalau API jalan di host/port lain, buat `frontend/.env` berisi `VITE_API_URL=http://host:port`.
 Perintah lain di frontend: `npm test` (validasi form), `npm run build` (build produksi ke `dist/`).
+
+## Dashboard Moderasi (admin/petugas keamanan)
+
+Buka <http://localhost:5173/admin>. Halaman ini menampilkan statistik laporan dan
+antrean moderasi: setujui laporan, atau tolak dengan alasan.
+
+Endpoint yang dipakai:
+
+| Method | Endpoint | Keterangan |
+| --- | --- | --- |
+| `GET` | `/api/reports?status=&tipe=` | daftar laporan, bisa difilter |
+| `GET` | `/api/reports/stats` | jumlah per status, tipe, dan kategori |
+| `PATCH` | `/api/reports/:id/status` | body `{ status, alasan_tolak }`, status: `pending` \| `disetujui` \| `ditolak` |
+
+Cek logika moderasi di backend: `cd backend && npm test`.

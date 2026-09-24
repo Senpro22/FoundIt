@@ -9,7 +9,8 @@ const Report = sequelize.define('Report', {
   waktu_kejadian: { type: DataTypes.DATE },
   deskripsi: { type: DataTypes.TEXT },
   foto_url: { type: DataTypes.STRING },
-  status: { type: DataTypes.STRING, defaultValue: 'pending' },
+  status: { type: DataTypes.STRING, defaultValue: 'pending' }, // pending | disetujui | ditolak
+  alasan_tolak: { type: DataTypes.TEXT },
 }, {
   tableName: 'reports',
   timestamps: true,

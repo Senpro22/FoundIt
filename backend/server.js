@@ -13,7 +13,7 @@ app.use('/api/reports', reportRoutes);
 const adminRoutes = require('./routes/admin');
 app.use('/api/admin', adminRoutes);
 
-sequelize.sync().then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(process.env.PORT, () => {
     console.log(`Server jalan di port ${process.env.PORT}`);
   });
