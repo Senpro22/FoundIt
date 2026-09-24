@@ -10,6 +10,8 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 app.use('/api/reports', reportRoutes);
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
 
 sequelize.sync().then(() => {
   app.listen(process.env.PORT, () => {
