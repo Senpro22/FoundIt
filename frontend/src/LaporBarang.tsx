@@ -167,7 +167,7 @@ export default function LaporBarang() {
             <a href="#" aria-current="page">
               Lapor
             </a>
-            <a href="#">Katalog</a>
+            <a href="/katalog">Katalog</a>
             <a href="#">Riwayat</a>
           </nav>
         </div>
