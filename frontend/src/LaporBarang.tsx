@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState, type FormEvent } from 'react';
 import { formatMB, validateFoto, validateForm, type FieldError } from './formLogic';
+import { KATEGORI, LOKASI } from './konstanta';
 
 const API = (import.meta.env.VITE_API_URL ?? 'http://localhost:8000') + '/api/reports';
 
@@ -19,16 +20,6 @@ const TEKS = {
     helperDeskripsi: 'Boleh singkat. Detail tambahan membantu pemilik mengenali barangnya.',
   },
 } as const;
-
-const KATEGORI = ['Dompet & Kartu', 'Elektronik', 'Kunci', 'Tas', 'Pakaian', 'Dokumen', 'Lainnya'];
-const LOKASI = [
-  'Perpustakaan Pusat',
-  'Perpustakaan Fakultas Teknik',
-  'Gedung Kuliah Umum',
-  'Kantin Fakultas Teknik',
-  'Masjid Kampus',
-  'Lainnya',
-];
 
 const pad = (n: number) => String(n).padStart(2, '0');
 const sekarangLokal = () => {
