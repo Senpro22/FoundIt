@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>FoundIt — Katalog (mobile)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F6F8}
+a{color:#14315E}a:hover{color:#0E2547}
+input::placeholder{color:#8A93A3}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; min-height: 1560px; background: #F5F6F8; color: #101828; font-family: 'Public Sans', system-ui, sans-serif; overflow: hidden">
+
+<header style="background: #14315E; height: 58px; padding: 0 12px 0 18px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 9px">
+<div style="width: 24px; height: 24px; border-radius: 7px; background: #E8B14C"></div>
+<span style="font-weight: 700; font-size: 16px; color: #FFFFFF; letter-spacing: -0.015em">FoundIt</span>
+</div>
+<div style="display: flex; align-items: center; gap: 4px">
+<div style="width: 32px; height: 32px; border-radius: 50%; background: #E8B14C; color: #14315E; font-weight: 700; font-size: 13px; display: grid; place-items: center">R</div>
+<button aria-label="Buka menu" style="width: 44px; height: 44px; border: 0; background: none; color: #FFFFFF; display: grid; place-items: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+</div>
+</header>
+
+<div style="padding: 20px 16px 120px; display: flex; flex-direction: column; gap: 14px">
+<div>
+<h1 style="margin: 0; font-size: 25px; line-height: 1.2; letter-spacing: -0.02em">Katalog Barang</h1>
+<p style="margin: 5px 0 0; font-size: 14px; line-height: 1.5; color: #5A6577">Laporan hilang &amp; temuan yang sudah diverifikasi.</p>
+</div>
+
+<div style="position: relative; display: flex; align-items: center">
+<label for="cari-m" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Cari barang</label>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5A6577" stroke-width="2" stroke-linecap="round" aria-hidden="true" style="position: absolute; left: 14px"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<input id="cari-m" type="search" placeholder="Cari barang…" style="width: 100%; min-height: 48px; padding: 0 14px 0 42px; border: 1px solid #D3D8E0; border-radius: 11px; background: #FFFFFF; font: 400 15px 'Public Sans', sans-serif; color: #101828; box-sizing: border-box">
+</div>
+
+<div role="tablist" aria-label="Tipe laporan" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: #E9ECF1; border-radius: 12px; padding: 4px">
+<button role="tab" aria-selected="true" style="min-height: 44px; border: 0; border-radius: 9px; background: #FFFFFF; color: #14315E; font: 600 14px 'Public Sans', sans-serif; box-shadow: 0 1px 2px rgba(16,24,40,.12)">Semua</button>
+<button role="tab" aria-selected="false" style="min-height: 44px; border: 0; border-radius: 9px; background: none; color: #5A6577; font: 500 14px 'Public Sans', sans-serif">Hilang</button>
+<button role="tab" aria-selected="false" style="min-height: 44px; border: 0; border-radius: 9px; background: none; color: #5A6577; font: 500 14px 'Public Sans', sans-serif">Ditemukan</button>
+</div>
+
+<div role="group" aria-label="Kategori" style="display: flex; gap: 8px; overflow: hidden; margin-right: -16px">
+<button aria-pressed="true" style="flex: none; min-height: 40px; padding: 0 15px; border-radius: 999px; background: #14315E; color: #FFFFFF; border: 1px solid #14315E; font: 600 13.5px 'Public Sans', sans-serif">Semua</button>
+<button aria-pressed="false" style="flex: none; min-height: 40px; padding: 0 15px; border-radius: 999px; background: #FFFFFF; color: #344054; border: 1px solid #D3D8E0; font: 500 13.5px 'Public Sans', sans-serif">Dompet &amp; Kartu</button>
+<button aria-pressed="false" style="flex: none; min-height: 40px; padding: 0 15px; border-radius: 999px; background: #FFFFFF; color: #344054; border: 1px solid #D3D8E0; font: 500 13.5px 'Public Sans', sans-serif">Elektronik</button>
+<button aria-pressed="false" style="flex: none; min-height: 40px; padding: 0 15px; border-radius: 999px; background: #FFFFFF; color: #344054; border: 1px solid #D3D8E0; font: 500 13.5px 'Public Sans', sans-serif">Kunci</button>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-size: 14px; color: #5A6577"><b style="color: #101828; font-weight: 600">8 barang</b> ditemukan</p>
+<button style="min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #C3CAD5; background: #FFFFFF; color: #14315E; font: 600 13.5px 'Public Sans', sans-serif; display: inline-flex; align-items: center; gap: 7px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"></path><circle cx="16" cy="6" r="2"></circle><circle cx="10" cy="12" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+Lokasi, tanggal, status
+</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{list}}" as="it" hint-placeholder-count="6">
+<a href="Detail-Publik.dc.html" style="display: flex; gap: 12px; padding: 10px; background: #FFFFFF; border: 1px solid #E3E6EB; border-radius: 14px; text-decoration: none; color: #101828">
+<div style="{{it.fotoStyle}}">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5A6577" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{it.path}}"></path></svg>
+</div>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-top: 1px">
+<div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap">
+<span style="{{it.badgeStyle}}">{{it.badge}}</span>
+<sc-if value="{{it.klaim}}" hint-placeholder-val="{{ false }}"><span style="padding: 2px 8px; border-radius: 999px; background: #EEF0F3; color: #344054; font-size: 11.5px; font-weight: 600">Sudah diklaim</span></sc-if>
+</div>
+<span style="font-size: 14.5px; font-weight: 600; line-height: 1.35">{{it.judul}}</span>
+<span style="font-size: 12.5px; line-height: 1.45; color: #5A6577">{{it.lokasi}} · {{it.waktu}}</span>
+</div>
+</a>
+</sc-for>
+</div>
+
+<button style="min-height: 48px; border-radius: 11px; border: 1px solid #C3CAD5; background: #FFFFFF; color: #14315E; font: 600 14.5px 'Public Sans', sans-serif">Muat lebih banyak</button>
+</div>
+
+<div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 16px 26px; background: linear-gradient(rgba(245,246,248,0), #F5F6F8 38%)">
+<a href="#" style="min-height: 52px; border-radius: 12px; background: #B0621A; color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; box-shadow: 0 4px 14px rgba(16,24,40,.18)">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+Lapor barang
+</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var P = {
+      dompet: 'M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM16 11h5v5h-5a2.5 2.5 0 0 1 0-5zM5 6l10-3 1.2 3',
+      elektronik: 'M9 2.5h6a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2v-15a2 2 0 0 1 2-2zM11 18h2',
+      kunci: 'M4 15a4 4 0 1 0 8 0a4 4 0 1 0-8 0M11 12l8-8M16 7l2 2M14 9l2 2',
+      tas: 'M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2',
+      pakaian: 'M8 3L3 6l2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z',
+      dokumen: 'M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6',
+      lainnya: 'M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10'
+    };
+    var TINT = { dompet: '#F3EDE6', elektronik: '#E9EEF6', kunci: '#EAF1EC', tas: '#EDEBF3', pakaian: '#F2EDF0', dokumen: '#F3F1E8', lainnya: '#EDF0F4' };
+    var data = [
+      ['ditemukan', 'dompet', 'Dompet kulit cokelat model lipat', 'Perpustakaan Pusat', '2 jam lalu'],
+      ['hilang', 'elektronik', 'Earphone TWS putih dengan case', 'Kantin Fakultas Teknik', '5 jam lalu'],
+      ['ditemukan', 'kunci', 'Kunci motor, gantungan karet biru', 'Gedung Kuliah Umum', 'Kemarin'],
+      ['ditemukan', 'tas', 'Tas laptop hitam, ada pin di resleting', 'Perpustakaan FT', 'Kemarin'],
+      ['hilang', 'dokumen', 'Map plastik bening berisi berkas KRS', 'Gedung Kuliah Umum', '29 Sep'],
+      ['ditemukan', 'elektronik', 'Kalkulator ilmiah warna hitam', 'Perpustakaan Pusat', '28 Sep', true]
+    ];
+    return {
+      list: data.map(function (d) {
+        var hilang = d[0] === 'hilang';
+        return {
+          judul: d[2], lokasi: d[3], waktu: d[4], klaim: !!d[5], path: P[d[1]],
+          badge: hilang ? 'Hilang' : 'Ditemukan',
+          badgeStyle: 'padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 700; ' + (hilang ? 'background: #E7EDF7; color: #14315E' : 'background: #0A6B3D; color: #FFFFFF'),
+          fotoStyle: 'flex: none; width: 92px; height: 92px; border-radius: 10px; display: grid; place-items: center; background: ' + TINT[d[1]] + (d[5] ? '; opacity: .62' : '')
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>
