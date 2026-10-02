@@ -1,0 +1,84 @@
+/* Katalog & Pencarian. Token warna, header, tombol, kartu, tabs, tag, banner dari lapor.css dan admin.css. */
+
+main.katalog{max-width:1200px}
+.katalog .kepala{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.katalog a.tombol{text-decoration:none}
+
+/* panel cari & filter */
+.panel-filter{gap:16px;padding:18px}
+.baris-cari{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+.kolom-cari{flex:1 1 340px;position:relative;display:flex;align-items:center}
+.kolom-cari svg{position:absolute;left:15px;color:var(--teks-2);pointer-events:none}
+.kolom-cari input{width:100%;min-height:46px;padding:0 14px 0 44px;border:1px solid var(--garis);border-radius:11px;background:#fff;
+  font:400 14.5px/1.4 'Public Sans',sans-serif;color:var(--teks)}
+.pilih{display:flex;flex-direction:column;gap:5px;min-width:190px}
+.pilih label{font-size:12.5px;font-weight:600;color:var(--teks-2)}
+.panel-filter .tabs button[aria-pressed="true"]{background:#fff;color:var(--navy);font-weight:600;box-shadow:0 1px 2px rgba(16,24,40,.12)}
+.label-pendek{display:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:40px;padding:0 15px;border-radius:999px;border:1px solid var(--garis);background:#fff;
+  font-size:13.5px;font-weight:500;color:#344054;white-space:nowrap}
+.chip:hover{border-color:var(--navy)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
+
+/* ringkasan hasil */
+.ringkasan{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;margin:-6px 0}
+.ringkasan p{margin:0;font-size:14px;color:var(--teks-2)}
+.ringkasan b{color:var(--teks);font-weight:600}
+.tautan{min-height:44px;padding:0 8px;border:0;background:none;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:underline}
+.katalog .banner{align-items:center}
+.katalog .banner > div{flex:1}
+
+/* grid kartu */
+.grid-barang{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.kartu-barang{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--garis-2);border-radius:14px;
+  overflow:hidden;color:inherit;text-decoration:none;transition:border-color .15s,box-shadow .15s}
+.kartu-barang:hover{border-color:#C3CAD5;box-shadow:0 4px 14px rgba(16,24,40,.08)}
+.foto-barang{position:relative;aspect-ratio:4/3;display:grid;place-items:center;background:#EDF0F4;color:var(--teks-2)}
+.foto-barang img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto-barang .tag-foto{position:absolute;left:10px;top:10px}
+.foto-barang .tag{background-clip:padding-box;box-shadow:0 1px 2px rgba(16,24,40,.12)}
+.k-dompet{background:#F3EDE6}.k-elektronik{background:#E9EEF6}.k-kunci{background:#EAF1EC}.k-tas{background:#EDEBF3}
+.k-pakaian{background:#F2EDF0}.k-dokumen{background:#F3F1E8}.k-lainnya{background:#EDF0F4}
+.isi-barang{padding:13px 14px 15px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.isi-barang .kat{font-size:12.5px;font-weight:600;color:var(--teks-2)}
+.isi-barang b{font-size:15px;line-height:1.35;font-weight:600;color:var(--teks)}
+.info{display:flex;align-items:center;gap:6px;font-size:13px;line-height:1.4;color:var(--teks-2)}
+.info svg{flex:none}
+.tag-mobile{display:none}
+
+/* memuat */
+.kerangka{height:300px;border-radius:14px;border:1px solid var(--garis-2);
+  background:linear-gradient(90deg,#EEF0F3 0%,#F7F8FA 40%,#EEF0F3 80%) 0 0/200% 100%;animation:kerlip 1.2s linear infinite}
+@keyframes kerlip{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.kerangka{animation:none}}
+
+/* kosong */
+.kosong-katalog{align-items:center;text-align:center;padding:48px 24px;gap:12px;border-style:dashed;border-color:#C3CAD5}
+.kosong-katalog .ikon-kosong{width:52px;height:52px;border-radius:14px;background:#E7EDF7;color:var(--navy);display:grid;place-items:center}
+.kosong-katalog h2{margin:4px 0 0;font-size:18px}
+.kosong-katalog p{margin:0;max-width:440px;font-size:14px;line-height:1.6;color:var(--teks-2)}
+.aksi-kosong{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.muat-lagi{align-self:center}
+
+@media (max-width:640px){
+  .katalog .kepala .tombol.utama{position:fixed;left:16px;right:16px;bottom:16px;z-index:5;min-height:52px;box-shadow:0 4px 14px rgba(16,24,40,.18)}
+  main.katalog{padding-bottom:96px}
+  .panel-filter{padding:14px}
+  .pilih{flex:1 1 140px;min-width:0}
+  .panel-filter .tabs{width:100%}
+  .panel-filter .tabs button{flex:1;padding:0 6px}
+  .label-panjang{display:none}
+  .label-pendek{display:inline}
+  .grid-barang{grid-template-columns:1fr;gap:10px}
+  .kartu-barang{flex-direction:row;gap:12px;padding:10px}
+  .foto-barang{width:92px;height:92px;aspect-ratio:auto;flex:none;border-radius:10px;overflow:hidden}
+  .foto-barang .tag-foto{display:none}
+  .tag-mobile{display:block}
+  .isi-barang{padding:0;gap:4px}
+  .isi-barang .kat{display:none}
+  .isi-barang b{font-size:14.5px}
+  .ikon-kategori svg{width:32px;height:32px}
+  .kerangka{height:114px}
+}
