@@ -1,1 +1,10 @@
 .claude/
+
+# Python virtual environments
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Node.js dependencies
+node_modules/
