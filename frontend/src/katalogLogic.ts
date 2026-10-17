@@ -98,3 +98,40 @@ export function waktuRelatif(iso: string, now = Date.now()) {
   );
   return `${tgl}, ${jamMenit(d)}`;
 }
+
+// Urutan katalog: kejadian terbaru dulu.
+export const terbaruDulu = (a: Laporan, b: Laporan) => b.waktu_kejadian.localeCompare(a.waktu_kejadian);
+
+export type Kelompok = { judul: string; tanggal?: string; isi: Laporan[] };
+
+const HARI = 24 * JAM;
+const namaHari = (t: number) => new Date(t).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'short' });
+
+// Kelompokkan per hari kejadian: Hari Ini, Kemarin, Minggu Ini (7 hari), Lebih Lama.
+// `daftar` dianggap sudah urut terbaru dulu, urutannya dipertahankan.
+export function kelompokHari(daftar: Laporan[], now = Date.now()): Kelompok[] {
+  const awal = new Date(now);
+  awal.setHours(0, 0, 0, 0);
+  const hariIni = awal.getTime();
+  const kelompok: Kelompok[] = [
+    { judul: 'Hari Ini', tanggal: namaHari(hariIni), isi: [] },
+    { judul: 'Kemarin', tanggal: namaHari(hariIni - HARI), isi: [] },
+    { judul: 'Minggu Ini', isi: [] },
+    { judul: 'Lebih Lama', isi: [] },
+  ];
+  for (const l of daftar) {
+    const t = new Date(l.waktu_kejadian).getTime();
+    const i = Number.isNaN(t) ? 3 : t >= hariIni ? 0 : t >= hariIni - HARI ? 1 : t >= hariIni - 6 * HARI ? 2 : 3;
+    kelompok[i].isi.push(l);
+  }
+  return kelompok.filter((k) => k.isi.length);
+}
+
+// Jam untuk hari ini/kemarin ("09.12"), tanggal untuk yang lebih lama ("13 Okt").
+export function waktuSingkat(iso: string, now = Date.now()) {
+  const d = new Date(iso);
+  const awal = new Date(now);
+  awal.setHours(0, 0, 0, 0);
+  if (d.getTime() >= awal.getTime() - HARI) return jamMenit(d);
+  return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short' });
+}

@@ -1,103 +1,41 @@
-/* Verifikasi Klaim (form + status). Dasar dari lapor.css (kartu, field, dropzone, pratinjau, tombol, banner,
-   aksi, aksi-mobile) dan detail.css (main.detail, kembali, kepala-detail, foto-detail). */
+/* Verifikasi Klaim. Dropzone & berkas dari lapor.css, sisanya dari tema.css. */
+main.klaim{gap:24px}
+.kolom-form{display:flex;flex-direction:column;gap:28px;min-width:0}
+.form-klaim.mengirim .grup-isi{opacity:.6}
+.catatan-dummy{padding:0;margin-top:-12px}
+.isian-panjang + .isian-panjang{border-top:1px solid var(--warna-garis);margin-left:16px;padding-left:0}
+.tambah-bukti{color:var(--warna-aksen-teks)}
+.nama-bukti{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.baris .nama-bukti + .nilai{flex:none}
 
-.klaim .sub{max-width:640px}
-.catatan-dummy{margin:-6px 0 0;font-size:12.5px;color:var(--teks-3)}
-.form-klaim{display:flex;flex-direction:column;gap:18px}
-.form-klaim .banner,.status-klaim .banner{margin-top:0}
-.kolom-klaim{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
-.isian-klaim,.status-klaim{flex:999 1 560px;min-width:0;gap:26px}
-.samping-klaim{flex:1 1 320px;max-width:400px;display:flex;flex-direction:column;gap:16px}
+/* pernyataan */
+.pernyataan{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;font-size:13px;line-height:1.45;cursor:pointer}
+.pernyataan input{flex:none;width:20px;height:20px;margin:0;accent-color:var(--warna-aksen);cursor:pointer}
+.pernyataan.salah input{outline:2px solid var(--warna-hilang);outline-offset:1px;border-radius:4px}
 
-.bagian-klaim{display:flex;flex-direction:column;gap:14px}
-.bagian-klaim h2,.status-klaim h2{margin:0;font-size:17px;color:#1B2534}
-.opsional{font-weight:500;color:var(--teks-3)}
-.sub-bagian{margin:4px 0 0;font-size:13.5px;line-height:1.5;color:var(--teks-2)}
-.dropzone-ktm{min-height:200px}
-.pratinjau-ktm img{height:200px;object-fit:contain;background:#E7EDF7}
-.tombol-berkas{display:flex;gap:8px}
-.catatan-privasi{margin:0;display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#EEF3FA;border:1px solid #D6E0EF;font-size:13px;line-height:1.55;color:#1E3A66}
-.catatan-privasi svg{flex:none;color:var(--navy)}
-.hitung-kanan{align-self:flex-end}
-.isian-klaim textarea{min-height:92px}
+/* sidebar */
+.kartu-diklaim{padding:12px 12px 0}
+.atas-diklaim{display:flex;gap:12px;align-items:flex-start;padding-bottom:12px}
+.atas-diklaim .foto.mini{width:56px;height:56px}
+.info-diklaim{display:flex;flex-direction:column;gap:2px;min-width:0}
+.info-diklaim span{font-size:12px;color:var(--warna-teks-2)}
+.info-diklaim b{font-size:17px;font-weight:600;line-height:1.2}
+.skor-diklaim{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 12px;border-top:1px solid var(--warna-garis)}
+.skor-diklaim div{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--warna-teks-2)}
+.skor-diklaim b{font-size:13px;font-weight:600}
+.samping .tahapan .titik{background:#fff}
 
-.daftar-bukti{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-.daftar-bukti li{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid #DCE0E6;border-radius:12px}
-.daftar-bukti .nama{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.daftar-bukti .nama b{font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.daftar-bukti .nama span{font-size:12.5px;color:var(--teks-3)}
-.tambah-bukti{width:100%;min-height:64px;border:1.5px dashed #C3CAD5;border-radius:12px;background:#FAFBFC;
-  display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;font-weight:600;color:var(--navy)}
-.tambah-bukti:hover{border-color:var(--navy);background:#F4F7FC}
-
-.pernyataan{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:12px;border:1px solid var(--garis-2);background:#FAFBFC;
-  font-size:14px;font-weight:400;line-height:1.55;color:#1B2534;cursor:pointer}
-.pernyataan input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:var(--navy)}
-.pernyataan.salah{border:1.5px solid var(--merah);background:#FDF6F5}
-.aksi-klaim{margin-top:0}
-.form-klaim a.tombol[aria-disabled]{pointer-events:none;opacity:.5}
-form.form-klaim.mengirim .isian-klaim::after{content:"";position:absolute;inset:0;background:rgba(245,246,248,.5);border-radius:16px}
-
-/* kartu samping */
-.kartu-diklaim,.alur-klaim,.ringkas-kirim{padding:18px;gap:14px}
-.samping-klaim h2{margin:0;font-size:15px;color:#1B2534}
-.info-diklaim{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--teks-2)}
-.info-diklaim span:first-child{font-size:12.5px;font-weight:600}
-.info-diklaim b{font-size:16px;color:var(--teks)}
-.skor-diklaim{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;
-  background:#F3FAF6;border:1px solid #CBE8D7;font-size:13px;font-weight:600;color:var(--hijau)}
-.skor-diklaim strong{font-size:20px}
-.alur-klaim ol{margin:0;padding:0;list-style:none;counter-reset:langkah;display:flex;flex-direction:column;gap:14px}
-.alur-klaim li{counter-increment:langkah;display:flex;gap:12px;font-size:13.5px;line-height:1.55;color:#344054}
-.alur-klaim li::before{content:counter(langkah);flex:none;width:26px;height:26px;border-radius:50%;background:#E7EDF7;color:var(--navy);
-  font-size:13px;font-weight:700;display:grid;place-items:center}
-
-/* status */
-.pill-klaim{padding:4px 10px;border-radius:999px;font-size:12.5px;font-weight:700}
-.pill-klaim.menunggu{background:#FFF4E0;color:#8A5A00}
-.pill-klaim.diterima{background:#E6F4EC;color:var(--hijau)}
-.pill-klaim.ditolak{background:#FDECEA;color:var(--merah)}
-.banner.info{border-color:#C9D6EA;border-left-color:var(--navy);background:#EEF3FA}
-.banner.info .bulat{background:var(--navy)}
-.banner.info b{color:var(--navy)}
-.banner.info p{color:#1E3A66}
-.banner.berhasil{border-color:#BFE0CC;border-left-color:var(--hijau);background:#F3FAF6}
-.banner.berhasil .bulat{background:var(--hijau)}
-.banner.berhasil b{color:#0A5A33}
-.banner.berhasil p{color:#1F5A3B}
-.serah-terima{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;padding:16px;border-radius:12px;border:1px solid var(--garis-2);background:#FAFBFC}
-.serah-terima dt{font-size:12.5px;color:var(--teks-2)}
-.serah-terima dd{margin:3px 0 0;font-size:14.5px;font-weight:600}
-.serah-terima .kode-besar{font-size:22px;font-weight:700;letter-spacing:.06em;color:var(--navy)}
-.tombol-kiri{align-self:flex-start}
-.tahapan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.tahapan li{position:relative;display:flex;gap:14px;padding-bottom:18px}
-.tahapan li:not(:last-child)::after{content:"";position:absolute;left:13px;top:32px;bottom:2px;width:2px;background:var(--garis-2)}
-.titik{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700}
-.tahapan .selesai .titik{background:var(--hijau);color:#fff}
-.tahapan .aktif .titik{background:#fff;border:2px solid var(--navy);box-shadow:0 0 0 4px rgba(20,49,94,.12)}
-.tahapan .aktif .titik::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--navy)}
-.tahapan .gagal .titik{background:var(--merah);color:#fff}
-.tahapan .nanti .titik{background:#F2F4F7;border:1px solid var(--garis-2);color:var(--teks-4)}
-.teks-tahap{display:flex;flex-direction:column;gap:3px;padding-top:4px}
-.teks-tahap b{font-size:14.5px}
-.teks-tahap span{font-size:13px;color:var(--teks-2)}
-.tahapan .nanti b{font-weight:500;color:var(--teks-4)}
-.ringkas-kirim ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:13.5px;color:#344054}
-.ringkas-kirim li{display:flex;justify-content:space-between;gap:10px}
-.ringkas-kirim .ok{color:var(--hijau)}
-.ringkas-kirim p{margin:0;font-size:12.5px;line-height:1.5;color:var(--teks-3)}
-
-/* memuat */
-.kerangka-form{flex:999 1 560px;height:640px}
-.kerangka-samping{flex:1 1 320px;max-width:400px;height:420px}
-
-@media (max-width:640px){
-  .samping-klaim{max-width:none;order:-1}
-  .kartu-diklaim .foto-detail{display:none}
-  .alur-klaim{display:none}
-  .isian-klaim{gap:22px}
-  .isian-klaim textarea{min-height:110px}
-  .form-klaim .aksi-mobile .tombol{flex:1}
-  .form-klaim .aksi-mobile .tombol.utama{flex:2}
-}
+/* status klaim */
+.kartu-status{gap:20px}
+.kepala-status{display:flex;gap:14px;align-items:flex-start}
+.ikon-status{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;background:var(--warna-pending)}
+.kartu-status.diterima .ikon-status{background:var(--warna-temuan)}
+.kartu-status.ditolak .ikon-status{background:var(--warna-hilang)}
+.kepala-status h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.kepala-status p{margin-top:4px;font-size:15px;line-height:1.4;color:var(--warna-teks-2)}
+.kode-serah{background:var(--warna-permukaan-2);border-radius:var(--radius-sedang);padding:20px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.kode-serah span{font-size:11px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--warna-teks-2)}
+.kode-serah strong{font-size:clamp(44px,8vw,72px);font-weight:700;letter-spacing:-.02em;line-height:1.04}
+.grup-isi.bergaris{border:1px solid var(--warna-garis)}
+.ket-tolak{font-size:13px;line-height:1.45;color:var(--warna-teks-2)}
+.kartu-status .aksi.kiri{margin-top:0}

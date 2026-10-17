@@ -1,26 +1,28 @@
 import { useEffect, useMemo, useState } from 'react';
 import { KATEGORI, LOKASI } from './konstanta';
-import { CARI, IKON, Ikon, JAM, PIN, slug } from './ikon';
+import { BASE, Banner, FotoBarang, Kerangka, pesanGagal } from './bersama';
+import { CARI, CENTANG, CHEVRON, Ikon, PIN, TAMBAH, ikonKategori, slug } from './ikon';
+import { nomor } from './detailLogic';
 import {
   FILTER_AWAL,
   adaFilter,
+  cocokLokasi,
   judulKartu,
+  kelompokHari,
   saring,
-  waktuRelatif,
+  terbaruDulu,
+  waktuSingkat,
   type Filter,
   type Laporan,
   type Rentang,
 } from './katalogLogic';
 
-const BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
-const API = BASE + '/api/reports';
 const PER_HALAMAN = 12;
 
-// Label pendek dipakai di layar sempit supaya tab tidak turun ke dua baris.
 const TIPE = [
-  { key: 'semua', label: 'Semua', pendek: 'Semua' },
-  { key: 'hilang', label: 'Barang hilang', pendek: 'Hilang' },
-  { key: 'ditemukan', label: 'Barang ditemukan', pendek: 'Ditemukan' },
+  { key: 'semua', label: 'Semua' },
+  { key: 'hilang', label: 'Hilang' },
+  { key: 'ditemukan', label: 'Ditemukan' },
 ] as const;
 
 const RENTANG: { key: Rentang; label: string }[] = [
@@ -30,44 +32,47 @@ const RENTANG: { key: Rentang; label: string }[] = [
   { key: '30h', label: '30 hari terakhir' },
 ];
 
+type Tampilan = 'daftar' | 'grid';
 
-function Tag({ tipe }: { tipe: Laporan['tipe'] }) {
-  return <span className={`tag ${tipe}`}>{tipe === 'hilang' ? 'Hilang' : 'Ditemukan'}</span>;
+function Lencana({ tipe }: { tipe: Laporan['tipe'] }) {
+  return (
+    <span className={`lencana-status ${tipe}`} role="img" aria-label={tipe === 'hilang' ? 'Barang hilang' : 'Ditemukan'}>
+      {tipe === 'hilang' ? <b aria-hidden="true">?</b> : <Ikon d={CENTANG} ukuran={11} tebal={3} />}
+    </span>
+  );
 }
 
-function KartuBarang({ l, now }: { l: Laporan; now: number }) {
-  const [fotoGagal, setFotoGagal] = useState(false);
-  const adaFoto = l.foto_url && !fotoGagal;
+function ItemGrid({ l, now }: { l: Laporan; now: number }) {
   return (
     <li>
-      <a className="kartu-barang" href={`/katalog/${l.id}`}>
-        <div className={`foto-barang k-${slug(l.kategori)}`}>
-          {adaFoto ? (
-            <img src={BASE + l.foto_url} alt="" loading="lazy" onError={() => setFotoGagal(true)} />
-          ) : (
-            <span className="ikon-kategori">
-              <Ikon d={IKON[l.kategori] ?? IKON.Lainnya} ukuran={40} />
-            </span>
-          )}
-          <span className="tag-foto">
-            <Tag tipe={l.tipe} />
+      <a className="item-grid" href={`/katalog/${l.id}`}>
+        <FotoBarang l={l}>
+          <Lencana tipe={l.tipe} />
+        </FotoBarang>
+        <b>{judulKartu(l, 40)}</b>
+        <span>
+          {l.lokasi} · <time dateTime={l.waktu_kejadian}>{waktuSingkat(l.waktu_kejadian, now)}</time>
+        </span>
+      </a>
+    </li>
+  );
+}
+
+function ItemDaftar({ l, now }: { l: Laporan; now: number }) {
+  return (
+    <li>
+      <a className="baris item-daftar" href={`/katalog/${l.id}`}>
+        <FotoBarang l={l} className="mini" />
+        <span className="teks-item">
+          <b>{judulKartu(l, 60)}</b>
+          <span>
+            {l.lokasi} · <time dateTime={l.waktu_kejadian}>{waktuSingkat(l.waktu_kejadian, now)}</time> · {nomor(l.id)}
           </span>
-        </div>
-        <div className="isi-barang">
-          <span className="tag-mobile">
-            <Tag tipe={l.tipe} />
-          </span>
-          <span className="kat">{l.kategori}</span>
-          <b>{judulKartu(l)}</b>
-          <span className="info">
-            <Ikon d={PIN} />
-            {l.lokasi}
-          </span>
-          <span className="info">
-            <Ikon d={JAM} />
-            <time dateTime={l.waktu_kejadian}>{waktuRelatif(l.waktu_kejadian, now)}</time>
-          </span>
-        </div>
+        </span>
+        <span className={`titik-status ${l.tipe}`} role="img" aria-label={l.tipe === 'hilang' ? 'Barang hilang' : 'Ditemukan'} />
+        <span className="chevron">
+          <Ikon d={CHEVRON} ukuran={14} tebal={2} />
+        </span>
       </a>
     </li>
   );
@@ -78,6 +83,7 @@ export default function Katalog() {
   const [gagal, setGagal] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>(FILTER_AWAL);
   const [tampil, setTampil] = useState(PER_HALAMAN);
+  const [tampilan, setTampilan] = useState<Tampilan>('grid');
   const [muatUlang, setMuatUlang] = useState(0);
 
   useEffect(() => {
@@ -85,21 +91,22 @@ export default function Katalog() {
     setGagal(null);
     setLaporan(null);
     // Katalog publik hanya berisi laporan yang sudah disetujui petugas.
-    fetch(`${API}?status=disetujui`, { signal: ctrl.signal })
+    fetch(`${BASE}/api/reports?status=disetujui`, { signal: ctrl.signal })
       .then((res) => {
         if (!res.ok) throw new Error(`Server menjawab ${res.status}.`);
         return res.json() as Promise<Laporan[]>;
       })
       .then(setLaporan)
-      .catch((err: Error) => {
-        if (err.name === 'AbortError') return;
-        setGagal(err.message === 'Failed to fetch' ? 'Tidak bisa terhubung ke server FoundIt.' : err.message);
-      });
+      .catch((err: Error) => err.name !== 'AbortError' && setGagal(pesanGagal(err)));
     return () => ctrl.abort();
   }, [muatUlang]);
 
   const now = useMemo(() => Date.now(), [laporan]);
-  const hasil = useMemo(() => (laporan ? saring(laporan, filter, now) : []), [laporan, filter, now]);
+  const hasil = useMemo(() => (laporan ? saring(laporan, filter, now).sort(terbaruDulu) : []), [laporan, filter, now]);
+  const kelompok = useMemo(() => kelompokHari(hasil.slice(0, tampil), now), [hasil, tampil, now]);
+  // Angka di sidebar mengikuti filter lain, kecuali filter sidebar itu sendiri.
+  const perKategori = useMemo(() => (laporan ? saring(laporan, { ...filter, kategori: '' }, now) : []), [laporan, filter, now]);
+  const perLokasi = useMemo(() => (laporan ? saring(laporan, { ...filter, lokasi: '' }, now) : []), [laporan, filter, now]);
   const filterAktif = adaFilter(filter);
 
   const ubah = (patch: Partial<Filter>) => {
@@ -109,165 +116,186 @@ export default function Katalog() {
   const reset = () => ubah(FILTER_AWAL);
 
   return (
-    <>
-      <header>
-        <div className="kiri">
-          <div className="merk">
-            <div className="mark" />
-            <span>FoundIt</span>
-          </div>
-          <nav>
-            <a href="#">Beranda</a>
-            <a href="/">Lapor</a>
-            <a href="/katalog" aria-current="page">
-              Katalog
-            </a>
-            <a href="#">Riwayat</a>
-          </nav>
-        </div>
-        <div className="user">
-          <span>Rizky Ananda</span>
-          <div className="avatar">RA</div>
-        </div>
-      </header>
-
-      <main className="katalog">
-        <div className="kepala">
+    <Kerangka aktif="katalog">
+      <main className="paling-lebar katalog">
+        <div className="kepala-katalog">
           <div>
-            <h1>Katalog Barang</h1>
-            <p className="sub">Semua laporan barang hilang dan temuan di kampus yang sudah diverifikasi petugas.</p>
+            <h1>Katalog</h1>
+            <p className="sub">{laporan ? `${laporan.length} barang · ` : ''}semua sudah diverifikasi petugas</p>
           </div>
-          <a className="tombol utama" href="/">
-            <span aria-hidden="true">+</span> Lapor barang
+          <a className="tombol utama" href="/lapor">
+            <Ikon d={TAMBAH} ukuran={16} tebal={2.2} /> Lapor Barang
           </a>
         </div>
 
-        <section className="kartu panel-filter" aria-label="Cari dan saring barang">
-          <div className="baris-cari">
-            <div className="kolom-cari">
-              <label htmlFor="cari" className="sr-only">
-                Cari barang
-              </label>
-              <Ikon d={CARI} ukuran={18} />
-              <input
-                id="cari"
-                type="search"
-                value={filter.kata}
-                onChange={(e) => ubah({ kata: e.target.value })}
-                placeholder='Cari barang, misal "dompet cokelat" atau "kunci motor"'
-                autoComplete="off"
-              />
-            </div>
-            <div className="pilih">
-              <label htmlFor="f-lokasi">Lokasi</label>
-              <select id="f-lokasi" value={filter.lokasi} onChange={(e) => ubah({ lokasi: e.target.value })}>
-                <option value="">Semua lokasi</option>
-                {LOKASI.map((l) => (
-                  <option key={l} value={l}>
-                    {l}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="pilih">
-              <label htmlFor="f-waktu">Tanggal</label>
-              <select id="f-waktu" value={filter.rentang} onChange={(e) => ubah({ rentang: e.target.value as Rentang })}>
-                {RENTANG.map((r) => (
-                  <option key={r.key} value={r.key}>
-                    {r.label}
-                  </option>
-                ))}
-              </select>
-            </div>
+        <div className="alat" role="search">
+          <div className="kolom-cari">
+            <label htmlFor="cari" className="sr-only">
+              Cari barang
+            </label>
+            <Ikon d={CARI} ukuran={16} tebal={2} />
+            <input
+              id="cari"
+              type="search"
+              value={filter.kata}
+              onChange={(e) => ubah({ kata: e.target.value })}
+              placeholder="Cari dompet, kunci, KTM…"
+              autoComplete="off"
+            />
           </div>
-
-          <div className="tabs" role="group" aria-label="Tipe laporan">
+          <div className="segmented kecil" role="group" aria-label="Tipe laporan">
             {TIPE.map((t) => (
               <button key={t.key} type="button" aria-pressed={filter.tipe === t.key} onClick={() => ubah({ tipe: t.key })}>
-                <span className="label-panjang">{t.label}</span>
-                <span className="label-pendek">{t.pendek}</span>
+                {t.label}
               </button>
             ))}
           </div>
-
-          <div className="chips" role="group" aria-label="Kategori">
-            {['', ...KATEGORI].map((k) => (
-              <button key={k || 'semua'} type="button" className="chip" aria-pressed={filter.kategori === k}
-                onClick={() => ubah({ kategori: k })}>
-                {k || 'Semua kategori'}
+          <label className="pil-pilih">
+            <span className="sr-only">Lokasi</span>
+            <select value={filter.lokasi} onChange={(e) => ubah({ lokasi: e.target.value })}>
+              <option value="">Lokasi: Semua</option>
+              {LOKASI.map((l) => (
+                <option key={l} value={l}>
+                  Lokasi: {l}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="pil-pilih">
+            <span className="sr-only">Waktu</span>
+            <select value={filter.rentang} onChange={(e) => ubah({ rentang: e.target.value as Rentang })}>
+              {RENTANG.map((r) => (
+                <option key={r.key} value={r.key}>
+                  Waktu: {r.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <div className="segmented kecil" role="group" aria-label="Tampilan">
+            {(['daftar', 'grid'] as const).map((t) => (
+              <button key={t} type="button" aria-pressed={tampilan === t} onClick={() => setTampilan(t)}>
+                {t === 'daftar' ? 'Daftar' : 'Grid'}
               </button>
             ))}
           </div>
-        </section>
+        </div>
 
-        {gagal ? (
-          <div className="banner" role="alert">
-            <span className="bulat">!</span>
-            <div>
-              <b>Katalog belum bisa dimuat</b>
-              <p>{gagal} Pastikan backend jalan, lalu coba lagi.</p>
+        <div className="badan-katalog">
+          <aside className="sidebar">
+            <div className="grup">
+              <h2 className="grup-judul">Kategori</h2>
+              <ul className="grup-isi daftar-pilih">
+                {['', ...KATEGORI].map((k) => (
+                  <li key={k || 'semua'}>
+                    <button type="button" className="baris" aria-pressed={filter.kategori === k} onClick={() => ubah({ kategori: k })}>
+                      <span className={`kotak-ikon k-${k ? slug(k) : 'semua'}`}>
+                        <Ikon d={k ? ikonKategori(k) : CARI} ukuran={13} tebal={2} />
+                      </span>
+                      <span className="label">{k || 'Semua kategori'}</span>
+                      <span className="nilai">{k ? perKategori.filter((l) => l.kategori === k).length : perKategori.length}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <button type="button" className="tombol netral kecil" onClick={() => setMuatUlang((n) => n + 1)}>
-              Coba lagi
-            </button>
-          </div>
-        ) : laporan === null ? (
-          <ul className="grid-barang" aria-busy="true" aria-label="Memuat katalog">
-            {Array.from({ length: 8 }, (_, i) => (
-              <li key={i} className="kerangka" />
-            ))}
-          </ul>
-        ) : (
-          <>
-            <div className="ringkasan">
-              <p aria-live="polite">
-                <b>{hasil.length} barang</b> {filterAktif ? 'cocok dengan filter' : 'di katalog'}
-              </p>
-              {filterAktif && (
-                <button type="button" className="tautan" onClick={reset}>
-                  Hapus filter
-                </button>
-              )}
+            <div className="grup lokasi-samping">
+              <h2 className="grup-judul">Lokasi</h2>
+              <ul className="grup-isi daftar-pilih">
+                {LOKASI.filter((l) => l !== 'Lainnya').map((l) => (
+                  <li key={l}>
+                    <button
+                      type="button"
+                      className="baris"
+                      aria-pressed={filter.lokasi === l}
+                      onClick={() => ubah({ lokasi: filter.lokasi === l ? '' : l })}
+                    >
+                      <span className="pin">
+                        <Ikon d={PIN} ukuran={16} tebal={1.8} />
+                      </span>
+                      <span className="label">{l}</span>
+                      <span className="nilai">{perLokasi.filter((x) => cocokLokasi(x.lokasi, l)).length}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </aside>
 
-            {hasil.length === 0 ? (
-              <div className="kartu kosong-katalog">
-                <span className="ikon-kosong">
-                  <Ikon d={CARI} ukuran={26} />
+          <div className="isi-katalog">
+            {gagal ? (
+              <Banner
+                judul="Katalog belum bisa dimuat"
+                aksi={
+                  <button type="button" className="tombol netral kecil" onClick={() => setMuatUlang((n) => n + 1)}>
+                    Coba lagi
+                  </button>
+                }
+              >
+                {gagal} Pastikan backend jalan, lalu coba lagi.
+              </Banner>
+            ) : laporan === null ? (
+              <ul className="grid-katalog" aria-busy="true" aria-label="Memuat katalog">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <li key={i} className="kerangka" style={{ aspectRatio: '1' }} />
+                ))}
+              </ul>
+            ) : hasil.length === 0 ? (
+              <div className="kartu kosong">
+                <span className="ikon-bulat">
+                  <Ikon d={CARI} ukuran={20} tebal={2} />
                 </span>
                 <h2>{laporan.length === 0 ? 'Katalog masih kosong' : 'Belum ada barang yang cocok'}</h2>
                 <p>
                   {laporan.length === 0
                     ? 'Belum ada laporan yang disetujui petugas. Laporan baru muncul di sini setelah dimoderasi.'
-                    : 'Coba kata kunci lain atau longgarkan filternya. Kalau barangmu hilang, buat laporan supaya FoundIt bisa mencocokkannya otomatis saat ada temuan baru.'}
+                    : 'Coba kata kunci lain atau longgarkan filternya. Kalau barangmu hilang, buat laporan supaya FoundIt bisa mencocokkannya otomatis.'}
                 </p>
-                <div className="aksi-kosong">
+                <div className="aksi">
                   {filterAktif && (
                     <button type="button" className="tombol netral" onClick={reset}>
                       Hapus semua filter
                     </button>
                   )}
-                  <a className="tombol utama" href="/">
+                  <a className="tombol utama" href="/lapor">
                     Lapor barang hilang
                   </a>
                 </div>
               </div>
             ) : (
-              <ul className="grid-barang">
-                {hasil.slice(0, tampil).map((l) => (
-                  <KartuBarang key={l.id} l={l} now={now} />
+              <>
+                <p className="sr-only" aria-live="polite">
+                  {hasil.length} barang {filterAktif ? 'cocok dengan filter' : 'di katalog'}
+                </p>
+                {kelompok.map((k) => (
+                  <section key={k.judul} className="kelompok" aria-label={k.judul}>
+                    <h2>
+                      {k.judul} {k.tanggal && <span>{k.tanggal}</span>}
+                    </h2>
+                    {tampilan === 'grid' ? (
+                      <ul className="grid-katalog">
+                        {k.isi.map((l) => (
+                          <ItemGrid key={l.id} l={l} now={now} />
+                        ))}
+                      </ul>
+                    ) : (
+                      <ul className="grup-isi">
+                        {k.isi.map((l) => (
+                          <ItemDaftar key={l.id} l={l} now={now} />
+                        ))}
+                      </ul>
+                    )}
+                  </section>
                 ))}
-              </ul>
+                {hasil.length > tampil && (
+                  <button type="button" className="tautan muat-lagi" onClick={() => setTampil((n) => n + PER_HALAMAN)}>
+                    Tampilkan {hasil.length - tampil} barang lainnya
+                  </button>
+                )}
+              </>
             )}
-
-            {hasil.length > tampil && (
-              <button type="button" className="tombol netral muat-lagi" onClick={() => setTampil((n) => n + PER_HALAMAN)}>
-                Muat lebih banyak ({hasil.length - tampil} lagi)
-              </button>
-            )}
-          </>
-        )}
+          </div>
+        </div>
       </main>
-    </>
+    </Kerangka>
   );
 }

@@ -25,6 +25,17 @@ export const STRIP = 'M6 12h12';
 export const GEMBOK = 'M6 11h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2zM8 11V7a4 4 0 0 1 8 0v4';
 export const LONCENG = 'M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8M10 20a2 2 0 0 0 4 0';
 export const TAMBAH = 'M12 5v14M5 12h14';
+export const CHEVRON = 'M9 6l6 6-6 6';
+export const PANAH_KIRI = 'M19 12H5M11 18l-6-6 6-6';
+export const SERU = 'M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18M12 7.5v5.5M12 16.5v.01';
+export const SILANG = 'M7 7l10 10M17 7L7 17';
+export const UNGGAH = 'M12 16V5M7 10l5-5 5 5M5 19h14';
+export const KILAU = 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z';
+export const TANYA = 'M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 16.5v.01';
+export const PAYUNG = 'M3 12a9 9 0 0 1 18 0zM12 12v6.5a2 2 0 0 1-4 0M12 3v-.5';
+export const LOKASI_SAYA = 'M12 2v3M12 19v3M2 12h3M19 12h3M12 7a5 5 0 1 0 0 10a5 5 0 1 0 0-10';
+export const KURANG = 'M5 12h14';
+export const KTM = 'M3 6h18v12H3zM7 10.5a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0-3 0M6 15c.5-1.2 1.4-1.8 2.5-1.8s2 .6 2.5 1.8M13.5 10h4.5M13.5 13h3';
 
 export function Ikon({ d, ukuran = 16, tebal = 1.9 }: { d: string; ukuran?: number; tebal?: number }) {
   return (
