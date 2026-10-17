@@ -1,10 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import Beranda from './Beranda';
 import LaporBarang from './LaporBarang';
 import AdminDashboard from './AdminDashboard';
 import Katalog from './Katalog';
 import DetailLaporan from './DetailLaporan';
 import KlaimKepemilikan from './KlaimKepemilikan';
+import './tema.css';
+import './beranda.css';
 import './lapor.css';
 import './admin.css';
 import './katalog.css';
@@ -21,7 +24,9 @@ const Halaman = path.startsWith('/admin')
       ? Katalog
       : path.startsWith('/klaim')
         ? KlaimKepemilikan
-        : LaporBarang;
+        : path.startsWith('/lapor')
+          ? LaporBarang
+          : Beranda;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
