@@ -1,7 +1,7 @@
 // Jalankan: npm test
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { FILTER_AWAL, adaFilter, cocokLokasi, judulKartu, saring, waktuRelatif, type Laporan } from './katalogLogic.ts';
+import { FILTER_AWAL, adaFilter, cocokLokasi, judulKartu, kelompokHari, saring, terbaruDulu, waktuRelatif, waktuSingkat, type Laporan } from './katalogLogic.ts';
 
 const now = new Date('2026-10-02T15:00').getTime();
 const JAM = 60 * 60 * 1000;
@@ -70,4 +70,30 @@ test('waktu relatif', () => {
   assert.match(waktuRelatif(new Date('2026-10-01T09:30').toISOString(), now), /^Kemarin, 09.30$/);
   assert.match(waktuRelatif(new Date('2026-09-28T09:30').toISOString(), now), /^28 Sep, 09.30$/);
   assert.equal(waktuRelatif('bukan tanggal', now), '');
+});
+
+test('kelompok per hari kejadian, urutan dipertahankan', () => {
+  const pada = (id: number, iso: string) => lap(id, { waktu_kejadian: new Date(iso).toISOString() });
+  const daftar = [
+    pada(1, '2026-10-02T09:12'),
+    pada(2, '2026-10-02T00:00'),
+    pada(3, '2026-10-01T23:59'),
+    pada(4, '2026-09-26T10:00'),
+    pada(5, '2026-09-25T23:00'),
+    lap(6, { waktu_kejadian: 'bukan tanggal' }),
+  ].sort(terbaruDulu);
+  const k = kelompokHari(daftar, now);
+  assert.deepEqual(k.map((x) => [x.judul, ids(x.isi)]), [
+    ['Hari Ini', [1, 2]],
+    ['Kemarin', [3]],
+    ['Minggu Ini', [4]],
+    ['Lebih Lama', [6, 5]],
+  ]);
+  assert.equal(kelompokHari([], now).length, 0);
+});
+
+test('waktu singkat: jam untuk hari ini dan kemarin, tanggal untuk yang lama', () => {
+  assert.equal(waktuSingkat(new Date('2026-10-02T09:12').toISOString(), now), '09.12');
+  assert.equal(waktuSingkat(new Date('2026-10-01T13:40').toISOString(), now), '13.40');
+  assert.equal(waktuSingkat(new Date('2026-09-13T13:40').toISOString(), now), '13 Sep');
 });
