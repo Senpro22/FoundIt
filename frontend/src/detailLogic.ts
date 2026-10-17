@@ -93,7 +93,7 @@ export function faktaKecocokan(saya: Laporan, lawan: Laporan): Fakta[] {
   const fakta: Fakta[] = [];
 
   const lokasiSama = saya.lokasi === lawan.lokasi;
-  fakta.push({ nama: 'Lokasi', teks: lokasiSama ? `sama, ${lawan.lokasi}` : `beda, ${lawan.lokasi}`, sama: lokasiSama });
+  fakta.push({ nama: 'Lokasi', teks: `${lokasiSama ? 'Sama' : 'Beda'} · ${lawan.lokasi}`, sama: lokasiSama });
 
   const t1 = new Date(hilang.waktu_kejadian).getTime();
   const t2 = new Date(temuan.waktu_kejadian).getTime();
@@ -101,13 +101,13 @@ export function faktaKecocokan(saya: Laporan, lawan: Laporan): Fakta[] {
     const d = t2 - t1;
     fakta.push(
       d >= 0
-        ? { nama: 'Waktu', teks: `ditemukan ${selisihWaktu(d)} setelah waktu kehilangan`, sama: true }
-        : { nama: 'Waktu', teks: `ditemukan ${selisihWaktu(d)} sebelum waktu kehilangan`, sama: false },
+        ? { nama: 'Waktu', teks: `${selisihWaktu(d)} setelah hilang`, sama: true }
+        : { nama: 'Waktu', teks: `${selisihWaktu(d)} sebelum hilang`, sama: false },
     );
   }
 
   const kategoriSama = saya.kategori === lawan.kategori;
-  fakta.push({ nama: 'Kategori', teks: kategoriSama ? `sama, ${lawan.kategori}` : `beda, ${lawan.kategori}`, sama: kategoriSama });
+  fakta.push({ nama: 'Kategori', teks: `${kategoriSama ? 'Sama' : 'Beda'} · ${lawan.kategori}`, sama: kategoriSama });
   return fakta;
 }
 

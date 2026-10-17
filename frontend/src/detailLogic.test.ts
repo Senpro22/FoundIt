@@ -82,13 +82,13 @@ test('kecocokanUntuk bekerja dari sisi laporan temuan', () => {
 test('faktaKecocokan menjelaskan lokasi, waktu, dan kategori', () => {
   const f = faktaKecocokan(hilang, semua[1]);
   assert.deepEqual(f, [
-    { nama: 'Lokasi', teks: 'sama, Perpustakaan Pusat', sama: true },
-    { nama: 'Waktu', teks: 'ditemukan 3 jam setelah waktu kehilangan', sama: true },
-    { nama: 'Kategori', teks: 'sama, Dompet & Kartu', sama: true },
+    { nama: 'Lokasi', teks: 'Sama · Perpustakaan Pusat', sama: true },
+    { nama: 'Waktu', teks: '3 jam setelah hilang', sama: true },
+    { nama: 'Kategori', teks: 'Sama · Dompet & Kartu', sama: true },
   ]);
   const sebelum = faktaKecocokan(hilang, lap(7, { lokasi: 'Masjid Kampus', waktu_kejadian: new Date(now - 30 * JAM).toISOString() }));
   assert.equal(sebelum[0].sama, false);
-  assert.equal(sebelum[1].teks, 'ditemukan 25 jam sebelum waktu kehilangan');
+  assert.equal(sebelum[1].teks, '25 jam sebelum hilang');
   assert.equal(sebelum[1].sama, false);
 });
 
