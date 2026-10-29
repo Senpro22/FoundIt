@@ -77,3 +77,32 @@ def test_confidence_score():
     data = response.json()
     assert "confidence_score" in data
     assert 0.0 <= data["confidence_score"] <= 1.0
+
+def test_confidence_with_cv_unchanged():
+    r = client.post("/api/match/confidence", json={"cv_score": 0.8, "nlp_score": 0.6})
+    assert r.status_code == 200
+    assert r.json()["confidence_score"] == 0.72  # 0.8*0.6 + 0.6*0.4
+    assert r.json()["method"] == "cv+nlp"
+
+
+def test_confidence_without_cv_score_field():
+    r = client.post("/api/match/confidence", json={"nlp_score": 0.8})
+    assert r.status_code == 200
+    assert r.json()["confidence_score"] == 0.72  # 0.8 * 0.9
+    assert r.json()["method"] == "nlp_only"
+
+
+def test_confidence_with_null_cv_score():
+    r = client.post("/api/match/confidence", json={"cv_score": None, "nlp_score": 0.5})
+    assert r.status_code == 200
+    assert r.json()["method"] == "nlp_only"
+
+
+def test_confidence_rejects_out_of_range():
+    r = client.post("/api/match/confidence", json={"cv_score": 1.5, "nlp_score": 0.5})
+    assert r.status_code == 422
+
+
+def test_confidence_requires_nlp_score():
+    r = client.post("/api/match/confidence", json={"cv_score": 0.5})
+    assert r.status_code == 422
