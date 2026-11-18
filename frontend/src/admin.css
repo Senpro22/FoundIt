@@ -1,54 +1,76 @@
-/* Dashboard moderasi. Token warna & komponen dasar (header, tombol, kartu, tabs) dari lapor.css. */
+/* Dashboard Moderasi (Figma: Remake · Native / Dashboard Moderasi). Token & komponen dasar dari tema.css. */
+main.admin{gap:28px}
+.admin .hanya-sempit{display:none}
 
-main.lebar{max-width:1120px}
-h2{margin:0 0 14px;font-size:15px;letter-spacing:-.01em}
+/* ringkasan angka */
+.admin .kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.admin .kartu.angka{gap:8px;padding:20px}
+.admin .kpi-label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--warna-teks-2)}
+.admin .kpi-label i{width:8px;height:8px;border-radius:50%;flex:none;background:var(--warna-teks-3)}
+.admin .kpi-label i.pending{background:var(--warna-pending)}
+.admin .kpi-label i.temuan{background:var(--warna-temuan)}
+.admin .kpi-label i.hilang{background:var(--warna-hilang)}
+.admin .kartu.angka strong{font-size:34px;font-weight:700;letter-spacing:-.022em;line-height:1.1;font-variant-numeric:tabular-nums}
 
-/* kartu angka */
-.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
-.kartu.angka{gap:6px;padding:18px 20px;border-left:4px solid var(--navy)}
-.kartu.angka.kuning{border-left-color:var(--aksen)}
-.kartu.angka.hijau{border-left-color:var(--hijau)}
-.kartu.angka.merah{border-left-color:var(--merah)}
-.kpi-label{font-size:12.5px;font-weight:600;color:var(--teks-3)}
-.kartu.angka strong{font-size:30px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+/* grafik batang */
+.dua-grafik{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.grafik{padding:18px 16px}
+.grafik ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.grafik li{display:grid;grid-template-columns:132px minmax(0,1fr) 32px;align-items:center;gap:12px}
+.bar-nama{font-size:13px;color:var(--warna-teks-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-track{height:8px;border-radius:999px;background:var(--warna-permukaan-2);overflow:hidden}
+.bar-track span{display:block;height:100%;min-width:6px;border-radius:999px;background:var(--warna-aksen)}
+.grafik b{font-size:13px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
 
-/* grafik batang sederhana */
-.dua{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
-.bar{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.bar li{display:grid;grid-template-columns:120px 1fr 32px;align-items:center;gap:12px}
-.bar-nama{font-size:13px;color:var(--teks-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar-track{height:10px;border-radius:999px;background:#EDEFF3;overflow:hidden}
-.bar-isi{display:block;height:100%;border-radius:999px;background:var(--navy);min-width:4px}
-.bar-angka{font-size:13px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+/* kepala antrean */
+.kepala-antrean{display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;margin-top:8px}
+.kepala-antrean p{font-size:12px;color:var(--warna-teks-2)}
+.filter-status button{min-width:0;padding:6px 18px}
 
-/* daftar laporan */
-.daftar{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
-.kartu.laporan{flex-direction:row;gap:16px;padding:16px}
-.kartu.laporan img,.tanpa-foto{width:128px;height:128px;flex:none;border-radius:11px;object-fit:cover;background:#E6EAF0}
-.tanpa-foto{display:grid;place-items:center;font-size:12.5px;color:var(--teks-4)}
-.laporan .isi{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
-.baris-judul{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-.baris-judul b{font-size:15.5px}
-.kode{margin-left:auto;font-size:12.5px;color:var(--teks-4);font-variant-numeric:tabular-nums}
-.meta{margin:0;font-size:12.5px;color:var(--teks-3)}
-.deskripsi{margin:0;font-size:13.5px;line-height:1.55;color:var(--teks-2)}
-.alasan{margin:0;font-size:12.5px;font-weight:600;color:var(--merah)}
+/* kartu laporan */
+.antrean{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.kartu-moderasi{display:flex;gap:20px;padding:16px 20px 16px 16px;background:var(--warna-permukaan);border-radius:var(--radius-kartu)}
+.kartu-moderasi .foto{width:120px;height:120px;flex:none}
+.kartu-moderasi .isi{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.baris-judul{display:flex;align-items:center;gap:8px}
+.baris-judul b{font-size:17px;font-weight:600;letter-spacing:-.01em}
+.baris-judul .kode{margin-left:auto;font-size:12px;color:var(--warna-teks-3);font-variant-numeric:tabular-nums}
+.kartu-moderasi .meta{font-size:13px;color:var(--warna-teks-2)}
+.kartu-moderasi .deskripsi{font-size:15px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kartu-moderasi .alasan{display:flex;align-items:center;gap:6px;padding-top:4px;font-size:13px;font-weight:600;color:var(--warna-hilang)}
+.kartu-moderasi .alasan svg{flex:none}
+.kartu-moderasi .aksi{padding-top:6px}
 
-.tag{border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600;border:1px solid transparent}
-.tag.hilang{background:#FDF3F2;border-color:#F0C4BF;color:#8B1A11}
-.tag.ditemukan{background:#E4F3EA;border-color:#B7DEC6;color:var(--hijau)}
-.tag.status.pending{background:#FBF3E4;border-color:#EBD6AE;color:#7A4510}
-.tag.status.disetujui{background:#EEF3FB;border-color:#C6D5EC;color:var(--navy)}
-.tag.status.ditolak{background:#F2F4F7;border-color:var(--garis-2);color:var(--teks-2)}
+.form-tolak{display:flex;flex-direction:column;gap:8px;padding-top:8px}
+.form-tolak label{font-size:13px;font-weight:600}
+.form-tolak input{height:46px;padding:0 16px;border:1px solid var(--warna-garis);border-radius:var(--radius-sedang);background:var(--warna-permukaan-2);font-size:15px}
+.form-tolak input::placeholder{color:var(--warna-teks-3)}
+.form-tolak .grup-catatan{padding:0}
+.form-tolak .aksi{padding-top:4px}
+.tombol.utama.merah{background:var(--warna-hilang)}
+.tombol.utama.merah:hover{background:#b80012}
 
-.aksi-laporan{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:auto;padding-top:4px}
-.field.tolak{gap:7px;margin-top:4px}
-.kartu.kosong{align-items:center;padding:36px;color:var(--teks-3);font-size:14px}
-.kartu.kosong p{margin:0}
+.admin .kosong{padding:48px 28px}
+.ikon-bulat.hijau{width:48px;height:48px;background:var(--warna-temuan-bg);color:var(--warna-temuan)}
+.admin .muat-lagi{align-self:center}
 
+@media (max-width:900px){
+  .dua-grafik{grid-template-columns:minmax(0,1fr)}
+}
 @media (max-width:640px){
-  .kartu.laporan{flex-direction:column}
-  .kartu.laporan img,.tanpa-foto{width:100%;height:170px}
-  .bar li{grid-template-columns:96px 1fr 28px}
-  .kode{margin-left:0}
+  .admin .hanya-lebar{display:none}
+  .admin .hanya-sempit{display:inline}
+  main.admin{gap:24px}
+  .admin .kpi{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .admin .kartu.angka{padding:16px}
+  .kepala-antrean{display:block}
+  .filter-status{display:flex;overflow-x:auto;scrollbar-width:none;margin-bottom:12px}
+  .filter-status button{flex:none}
+  .kartu-moderasi{gap:12px;padding:14px}
+  .kartu-moderasi .foto{width:64px;height:64px}
+  .baris-judul{flex-wrap:wrap}
+  .baris-judul .kode{display:none}
+  .kartu-moderasi .deskripsi{-webkit-line-clamp:1}
+  .kartu-moderasi .aksi{flex-direction:row;justify-content:flex-end;align-items:center}
+  .kartu-moderasi .aksi .tombol.netral{border:1px solid var(--warna-garis);background:var(--warna-permukaan);color:var(--warna-teks)}
 }
