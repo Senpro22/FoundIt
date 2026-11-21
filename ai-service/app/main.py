@@ -1,12 +1,13 @@
 import io
+from typing import Optional
 
 from fastapi import FastAPI, UploadFile, File
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from PIL import Image
 
 from app.cv import image_similarity
 from app.nlp import text_similarity
-from app.matching import confidence_score
+from app.matching import confidence_score, match_method
 
 app = FastAPI(
     title="FoundIt AI Matching Service",
@@ -21,8 +22,8 @@ class TextCompareRequest(BaseModel):
 
 
 class ConfidenceRequest(BaseModel):
-    cv_score: float
-    nlp_score: float
+    cv_score: Optional[float] = Field(default=None, ge=0, le=1)
+    nlp_score: float = Field(ge=0, le=1)
 
 
 @app.get("/health")
@@ -53,8 +54,11 @@ def nlp_similarity(payload: TextCompareRequest):
 def match_confidence(payload: ConfidenceRequest):
     """
     Combine a CV similarity score and an NLP similarity score into a single
-    confidence score. Call /api/cv/similarity and /api/nlp/similarity first,
-    then pass their results here.
+    confidence score. cv_score is optional: omit it (or send null) when a
+    report has no photo, and the NLP score alone is used.
     """
     score = confidence_score(payload.cv_score, payload.nlp_score)
-    return {"confidence_score": score}
+    return {
+        "confidence_score": score,
+        "method": match_method(payload.cv_score),
+    }
