@@ -67,7 +67,25 @@ Aturan:
 - Nilai di luar 0 sampai 1 ditolak dengan status 422.
 - `nlp_score` wajib; jika hilang, status 422.
 
+## Service CLIP (clip-services, port 8002)
+
+### POST /api/clip/similarity
+Body `multipart/form-data`: `image1`, `image2` (sama seperti ai-service).
+Respons 200: `{"similarity": 0.8693}`
+File bukan gambar: 400. Field hilang: 422.
+
+Alur visual untuk Backend: jika kedua laporan punya foto, panggil endpoint ini
+(bukan /api/cv/similarity, yang memakai hash dan kurang akurat), simpan ke `visual_score`.
+
+## Port
+| Service | Port |
+|---|---|
+| backend | 8000 |
+| ai-service | 8001 |
+| clip-services | 8002 |
+
 ## Batasan yang diketahui
-- Skor visual memakai perceptual hash (MVP), belum CLIP.
+- /api/cv/similarity memakai hash (AUC sekitar 0.5); gunakan /api/clip/similarity untuk skor visual
 - Skor lokasi, waktu, dan kategori belum dihitung di AI service.
 - Penanganan gambar rusak belum ada (500).
+
