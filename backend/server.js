@@ -9,7 +9,9 @@ const adminClaimRoutes = require('./routes/adminClaims');
 const adminRoutes = require('./routes/admin');
 const matchRoutes = require('./routes/matches');
 const claimRoutes = require('./routes/claims');
+const authRoutes = require('./routes/auth');
 
+require('./models/user');
 require('./models/match');
 require('./models/claim');
 
@@ -20,6 +22,7 @@ app.use(express.json());
 
 app.use('/uploads', express.static('uploads'));
 
+app.use('/api/auth', authRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/admin/claims', adminClaimRoutes);
 app.use('/api/admin', adminRoutes);
