@@ -4,10 +4,11 @@ const router = express.Router();
 const Match = require('../models/match');
 const Report = require('../models/report');
 const hitungTextScore = require('../utils/textSimilarity');
+const adminAuth = require('../middleware/adminAuth');
 // const hitungConfidence = require('../utils/confidenceScore'); // punya Sri, aktifkan nanti
 
 // POST dasar (buat tes manual)
-router.post('/', async (req, res) => {
+router.post('/', adminAuth, async (req, res) => {
   try {
     const match = await Match.create(req.body);
     res.status(201).json(match);
@@ -35,13 +36,18 @@ router.get('/report/:reportId', async (req, res) => {
 });
 
 // Jalankan matching untuk 1 laporan
-router.post('/compute/:reportId', async (req, res) => {
+router.post('/compute/:reportId', adminAuth, async (req, res) => {
   try {
     const sumber = await Report.findByPk(req.params.reportId);
     if (!sumber) return res.status(404).json({ error: 'Laporan tidak ditemukan' });
+    if (sumber.status !== 'disetujui') {
+      return res.status(409).json({
+        error: 'Laporan harus disetujui sebelum dicocokkan.',
+      });
+    }
 
     const tipeLawan = sumber.tipe === 'hilang' ? 'ditemukan' : 'hilang';
-    const kandidat = await Report.findAll({ where: { tipe: tipeLawan, status: 'approved' } });
+    const kandidat = await Report.findAll({where: {tipe: tipeLawan, status: 'disetujui'}});
 
     const hasil = [];
     for (const target of kandidat) {
