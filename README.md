@@ -37,3 +37,16 @@ Endpoint yang dipakai:
 | `PATCH` | `/api/reports/:id/status` | body `{ status, alasan_tolak }`, status: `pending` \| `disetujui` \| `ditolak` |
 
 Cek logika moderasi di backend: `cd backend && npm test`.
+
+## Menjalankan AI service (Docker)
+
+```bash
+docker compose up --build
+```
+
+| Service | URL |
+|---|---|
+| ai-service (teks, confidence) | http://127.0.0.1:8001/docs |
+| clip-services (skor visual) | http://127.0.0.1:8002/docs |
+
+Kontrak API: `docs/api-contract.md`. Unduhan model CLIP pertama kali ±600 MB.

@@ -1,0 +1,15 @@
+services:
+  ai-service:
+    build: ./ai-service
+    ports:
+      - "8001:8001"
+
+  clip-services:
+    build: ./clip-services
+    ports:
+      - "8002:8002"
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+
+volumes:
+  hf-cache:
